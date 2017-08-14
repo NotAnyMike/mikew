@@ -46,13 +46,36 @@ header
 			height: 100%
 			justify-content: space-evenly
 			padding: 0 30px
+			align-items: center
+
+			div
+				font-size: 12px
 
 			.cv
 				text-transform: uppercase
-				border: 1px gray solid
+				border: 1px $gray solid
+				height: 31px
+				width: 31px
+				line-height: 31px
+				text-align: center
+				position: relative
 
-			.lenguage
+				&:before
+					content: ''
+					border: 1px solid red
+					width: 5px
+					height: 5px
+					position: absolute
+					top: -1px
+					right: -1px
+					border: 2.5px solid white
+					box-sizing: border-box
+					border-left-color: $violet
+					border-bottom-color: $violet
+
+			.language
 				text-decoration: underline
+				font-style: italic
 
 	ul
 		list-style: none
@@ -75,3 +98,136 @@ header
 
 			&:hover
 				color: $violet
+
+.mainContainer
+	.mainInfo
+		figure
+			background-color: gray
+			width: 100%
+			margin: 0px
+			padding: 0
+			height: 336px
+
+		.separator
+			background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+			width: 100%
+			height: 9px
+
+		span
+			width: 100%
+			font-style: italic
+			font-size: 14px
+			line-height: 22px
+			letter-spacing : 0.25px
+			color: $gray
+			text-align: center
+			padding: 22px 19px
+			box-sizing: border-box
+			display: inline-block
+
+	.someWorks
+		.titleContainer
+			display: flex
+			flex-direction: row
+			align-items: center
+			height: 12px
+
+			.title
+				text-align: center
+				display: inline-block
+				line-height: 12px
+				text-transform: uppercase
+				padding: 0 15px
+
+			.line
+				height: 1px
+				background-color: $gray
+				flex-grow: 1
+
+		ul
+			position: relative
+			display: flex
+			list-style: none
+
+			.left, .right
+				position: absolute
+
+			li
+				display: flex
+				flex-direction: column
+				background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+				width: 72px
+
+				span
+					text-align: center
+					background-color: white
+
+				.title
+					border: 4px double red
+					border-image: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+
+	.moto
+		height: 73px
+		background-color: $gray
+		color: white
+		text-style: italic
+		text-align: center
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+
+		div
+			padding: 2px
+
+footer
+	.contactInfoContainer
+		height: 97px
+		display: flex
+		flex-direction: row
+		justify-content: center
+
+		span
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			padding: 15px
+
+			&:before
+				font-size: 40px
+				font-family: 'mikew'
+
+			&:after
+				text-align: center
+				font-size: 14px
+
+		.fb
+			&:before
+				content: '\e900'
+
+			&:after
+				content: 'Mike Woodcock'
+
+		.whatsapp
+			&:before
+				content: '\e901'
+
+			&:after
+				content: '+ 57 312 553 8143'
+
+		.twitter
+			&:before
+				content: '\e902'
+
+			&:after
+				content: '@NotAnyMike'
+
+	.rights
+		background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+		color: white
+		line-height: 31px
+		font-style: italic
+		height: 31px
+		text-align: center
+		font-size: 9px
