@@ -8,7 +8,8 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('stylus-dev', function(){
 	return gulp.src('./web/layout/stylus/main.styl') .pipe(stylus())
-	.pipe(gulp.dest('./web/layout/css/main.css'));
+	.pipe(gulp.dest('./web/layout/css'))
+	.pipe(refresh());
 });
 
 gulp.task('sourcemaps-inline', function () {

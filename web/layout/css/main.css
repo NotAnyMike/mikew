@@ -1,0 +1,54 @@
+@import 'normalize.css';
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+header {
+  width: 100%;
+}
+header .identifierContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+header .identifierContainer .identifier {
+  border: 1px solid #000;
+  height: 80px;
+  width: 80px;
+}
+header .identifierContainer .options {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 0 30px;
+}
+header .identifierContainer .options .cv {
+  text-transform: uppercase;
+  border: 1px #808080 solid;
+}
+header .identifierContainer .options .lenguage {
+  text-decoration: underline;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px #808080 solid;
+  border-bottom: 1px #808080 solid;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 120px;
+}
