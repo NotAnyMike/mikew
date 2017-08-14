@@ -1,0 +1,27 @@
+{
+  "name": "mikew",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-cli": "^1.4.0",
+    "gulp-refresh": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotAnyMike/mikew.git"
+  },
+  "author": "Mike W",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NotAnyMike/mikew/issues"
+  },
+  "homepage": "https://github.com/NotAnyMike/mikew#readme"
+}
