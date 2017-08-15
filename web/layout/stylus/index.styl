@@ -1,12 +1,47 @@
+html
+	height: 100%
+	margin: 0
+
 body
 	border: 0
 	margin: 0
 	padding: 0
 	font-family: neris-light, sans
 	color: $gray
+	height: 100%
 
+.bodyContainer
+	display: flex
+	flex-flow: column
+	height: 100%
+
+	.mainContainer
+		flex: 1 1 auto
+
+	&.blogs
+		header
+			ul
+				li
+					&:first-child
+						color: $violet
+
+	&.projects
+		header
+			ul
+				li
+					&:nth-child(2)
+						color: $violet
+
+	&.writings
+		header
+			ul
+				li
+					&:last-child
+						color: violet
+	
 header
 	width: 100%
+	flex: 0 1 auto
 
 	.identifierContainer
 		position: relative
@@ -110,7 +145,7 @@ header
 			&:hover
 				color: $violet
 
-.mainContainer
+.indexContainer
 	.mainInfo
 		figure
 			background-color: gray
@@ -222,6 +257,9 @@ header
 					.title
 						border: 4px double $violet
 
+footer
+	flex: 0 1 auto
+
 	.moto
 		height: 73px
 		background-color: $gray
@@ -235,8 +273,7 @@ header
 
 		div
 			padding: 2px
-
-footer
+			
 	.contactInfoContainer
 		height: 97px
 		display: flex
