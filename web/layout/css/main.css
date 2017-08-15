@@ -632,6 +632,11 @@ header ul li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: 300ms color;
+  -moz-transition: 300ms color;
+  -o-transition: 300ms color;
+  -ms-transition: 300ms color;
+  transition: 300ms color;
 }
 header ul li:hover {
   color: #9e005d;
@@ -713,11 +718,48 @@ header ul li:hover {
   display: -ms-flexbox;
   display: box;
   display: flex;
+  -webkit-box-pack: left;
+  -moz-box-pack: left;
+  -o-box-pack: left;
+  -ms-flex-pack: left;
+  -webkit-justify-content: left;
+  justify-content: left;
   list-style: none;
+  overflow-x: scroll;
+  padding: 0;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .mainContainer .someWorks ul .left,
 .mainContainer .someWorks ul .right {
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  margin-top: -20px;
+  height: 41px;
+  width: 18px;
+  display: none;
+}
+.mainContainer .someWorks ul .left:after,
+.mainContainer .someWorks ul .right:after {
+  font-family: mikew;
+  font-size: 39px;
+  color: #9e005d;
+}
+.mainContainer .someWorks ul .left {
+  left: 0;
+}
+.mainContainer .someWorks ul .left:after {
+  content: '\e903';
+}
+.mainContainer .someWorks ul .right {
+  right: 0;
+}
+.mainContainer .someWorks ul .right:after {
+  content: '\e904';
 }
 .mainContainer .someWorks ul li {
   display: -webkit-box;
@@ -732,23 +774,45 @@ header ul li:hover {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background: -webkit-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  background: -moz-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  background: -o-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  background: -ms-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  background: linear-gradient(90deg, #b84179, #8c245c, #551942, #192a35);
-  width: 72px;
+  width: 140px;
+  margin: 10px 15px;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -o-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  background: transparent;
+  cursor: pointer;
 }
 .mainContainer .someWorks ul li span {
   text-align: center;
   background-color: #fff;
 }
 .mainContainer .someWorks ul li .title {
-  border: 4px double #f00;
-  -webkit-border-image: -webkit-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  -moz-border-image: -moz-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  -o-border-image: -o-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
-  border-image: linear-gradient(90deg, #b84179, #8c245c, #551942, #192a35);
+  border: 1px double #9e005d;
+  padding: 7px;
+  text-transform: uppercase;
+  font-size: 12px;
+  word-break: break-word;
+  -webkit-transition: 300ms border;
+  -moz-transition: 300ms border;
+  -o-transition: 300ms border;
+  -ms-transition: 300ms border;
+  transition: 300ms border;
+}
+.mainContainer .someWorks ul li .body {
+  padding: 15px 0;
+  font-size: 14px;
+}
+.mainContainer .someWorks ul li:last-child {
+  padding-right: 15px;
+}
+.mainContainer .someWorks ul li:hover .title {
+  border: 4px double #9e005d;
 }
 .mainContainer .moto {
   height: 73px;

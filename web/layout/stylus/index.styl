@@ -95,6 +95,7 @@ header
 			width: 120px
 			font-size: 12px
 			box-sizing: border-box
+			transition: $time color
 
 			&:hover
 				color: $violet
@@ -147,24 +148,69 @@ header
 		ul
 			position: relative
 			display: flex
+			justify-content: left
 			list-style: none
+			overflow-x: scroll
+			padding: 0
+			align-items: center
 
 			.left, .right
-				position: absolute
+				position: fixed
+				top: 50%
+				margin-top: -20px
+				height: 41px
+				width: 18px
+				display: none
+				
+				&:after
+					font-family: mikew
+					font-size: 39px
+					color: $violet
+
+			.left
+				left: 0
+
+				&:after
+					content: '\e903'
+
+			.right
+				right: 0
+
+				&:after
+					content: '\e904'
 
 			li
 				display: flex
 				flex-direction: column
-				background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
-				width: 72px
+				width: 140px
+				margin: 10px 15px
+				flex-shrink: 0
+				flex-grow: 0
+				background: transparent
+				cursor: pointer
 
 				span
 					text-align: center
 					background-color: white
 
 				.title
-					border: 4px double red
-					border-image: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+					border: 1px double $violet
+					padding: 7px
+					text-transform: uppercase
+					font-size: 12px
+					word-break: break-word
+					transition: $time border
+
+				.body
+					padding: 15px 0
+					font-size: 14px
+
+				&:last-child
+					padding-right: 15px
+
+				&:hover
+					.title
+						border: 4px double $violet
 
 	.moto
 		height: 73px
