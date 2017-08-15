@@ -500,7 +500,7 @@ body {
   color: #9e005d;
 }
 .bodyContainer.writings header ul li:last-child {
-  color: #ee82ee;
+  color: #9e005d;
 }
 header {
   width: 100%;
@@ -1099,10 +1099,80 @@ footer .rights {
   -ms-transition: color 300ms;
   transition: color 300ms;
 }
+.blogsContainer ul li span:first-letter {
+  color: #b2b2b1;
+  -webkit-transition: 300ms color;
+  -moz-transition: 300ms color;
+  -o-transition: 300ms color;
+  -ms-transition: 300ms color;
+  transition: 300ms color;
+}
 .blogsContainer ul li:hover {
   border-color: #9e005d;
   border-bottom: 8px solid #9e005d;
 }
 .blogsContainer ul li:hover span {
   color: #878786;
+}
+.blogsContainer ul li:hover span:first-letter {
+  color: #9e005d;
+}
+.writingsContainer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+.writingsContainer ul li {
+  padding: 25px;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  font-weight: normal;
+  -webkit-transition: 300ms background-color, 300ms font-weight;
+  -moz-transition: 300ms background-color, 300ms font-weight;
+  -o-transition: 300ms background-color, 300ms font-weight;
+  -ms-transition: 300ms background-color, 300ms font-weight;
+  transition: 300ms background-color, 300ms font-weight;
+  cursor: pointer;
+}
+.writingsContainer ul li span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.writingsContainer ul li .title {
+  text-transform: uppercase;
+  color: #662d91;
+}
+.writingsContainer ul li .body {
+  margin-top: 10px;
+  font-style: italic;
+  color: #b2b2b1;
+}
+.writingsContainer ul li:nth-child(2n) {
+  background-color: #b296c8;
+}
+.writingsContainer ul li:nth-child(2n) span {
+  color: #fff;
+}
+.writingsContainer ul li:nth-child(2n):hover {
+  background-color: #946cb2;
+}
+.writingsContainer ul li:hover {
+  font-weight: bold;
+}
+.writingsContainer ul li:last-child {
+  margin-bottom: 10px;
 }

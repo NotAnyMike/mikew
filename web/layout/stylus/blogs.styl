@@ -40,9 +40,16 @@
 				letter-spacing: 0.44px
 				transition: color $time
 
+				&:first-letter
+					color: $soft_gray
+					transition: $time color
+
 			&:hover
 				border-color: $violet
 				border-bottom: 8px solid $violet
 
 				span
 					color: $gray
+
+					&:first-letter
+						color: $violet
