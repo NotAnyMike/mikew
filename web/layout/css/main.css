@@ -566,8 +566,9 @@ header .identifierContainer .options {
   -webkit-align-items: center;
   align-items: center;
 }
-header .identifierContainer .options div {
+header .identifierContainer .options span {
   font-size: 12px;
+  cursor: pointer;
 }
 header .identifierContainer .options .cv {
   text-transform: uppercase;
@@ -577,6 +578,11 @@ header .identifierContainer .options .cv {
   line-height: 31px;
   text-align: center;
   position: relative;
+  -webkit-transition: 300ms border-color, 300ms color;
+  -moz-transition: 300ms border-color, 300ms color;
+  -o-transition: 300ms border-color, 300ms color;
+  -ms-transition: 300ms border-color, 300ms color;
+  transition: 300ms border-color, 300ms color;
 }
 header .identifierContainer .options .cv:before {
   content: '';
@@ -593,9 +599,21 @@ header .identifierContainer .options .cv:before {
   border-left-color: #9e005d;
   border-bottom-color: #9e005d;
 }
+header .identifierContainer .options .cv:hover {
+  border-color: #9e005d;
+  color: #9e005d;
+}
 header .identifierContainer .options .language {
   text-decoration: underline;
   font-style: italic;
+  -webkit-transition: 300ms color;
+  -moz-transition: 300ms color;
+  -o-transition: 300ms color;
+  -ms-transition: 300ms color;
+  transition: 300ms color;
+}
+header .identifierContainer .options .language:hover {
+  color: #9e005d;
 }
 header ul {
   list-style: none;

@@ -48,8 +48,9 @@ header
 			padding: 0 30px
 			align-items: center
 
-			div
+			span
 				font-size: 12px
+				cursor: pointer
 
 			.cv
 				text-transform: uppercase
@@ -59,6 +60,7 @@ header
 				line-height: 31px
 				text-align: center
 				position: relative
+				transition: $time border-color, $time color
 
 				&:before
 					content: ''
@@ -73,9 +75,17 @@ header
 					border-left-color: $violet
 					border-bottom-color: $violet
 
+				&:hover
+					border-color: $violet
+					color: $violet
+
 			.language
 				text-decoration: underline
 				font-style: italic
+				transition: $time color
+
+				&:hover
+					color: $violet
 
 	ul
 		list-style: none
