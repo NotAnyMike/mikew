@@ -1176,14 +1176,17 @@ footer .rights {
 .writingsContainer ul li:last-child {
   margin-bottom: 10px;
 }
-.blogContainer .identifierEntry {
+.blogContainer .identifierEntry,
+.projectContainer .identifierEntry {
   text-align: center;
-  margin: 25px;
+  margin: 25px 25px 10px 25px;
 }
-.blogContainer .identifierEntry img {
+.blogContainer .identifierEntry img,
+.projectContainer .identifierEntry img {
   display: inline-block;
 }
-.blogContainer .title {
+.blogContainer .title,
+.projectContainer .title {
   text-transform: uppercase;
   text-align: center;
   color: #9e005d;
@@ -1194,27 +1197,61 @@ footer .rights {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.blogContainer .content {
-  padding: 10px 25px;
-}
-.blogContainer .content p {
+.blogContainer .content p,
+.projectContainer .content p,
+.blogContainer .summary p,
+.projectContainer .summary p {
   text-align: justify;
   line-height: 22px;
   letter-spacing: 0.4px;
+  padding: 10px 25px 28px 25px;
+  margin: 0;
 }
-.blogContainer .content p:first-child:first-letter {
+.blogContainer .content p:first-child:first-letter,
+.projectContainer .content p:first-child:first-letter,
+.blogContainer .summary p:first-child:first-letter,
+.projectContainer .summary p:first-child:first-letter {
   color: #9e005d;
 }
-.blogContainer .content img {
+.blogContainer .content img,
+.projectContainer .content img,
+.blogContainer .summary img,
+.projectContainer .summary img {
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 25px;
 }
-.blogContainer .content h2 {
+.blogContainer .content h2,
+.projectContainer .content h2,
+.blogContainer .summary h2,
+.projectContainer .summary h2 {
   font-size: 14px;
+  margin: 0;
+  padding: 0 25px;
+  padding-top: 32px;
   color: #9e005d;
   text-transform: capitalize;
-  margin-top: 32px;
 }
-.blogContainer .content a {
+.blogContainer .content a,
+.projectContainer .content a,
+.blogContainer .summary a,
+.projectContainer .summary a {
   color: #b2b2b1;
+}
+.projectContainer .summary {
+  display: inline-block;
+}
+.projectContainer .summary p {
+  text-align: justify;
+}
+.projectContainer .techs .title {
+  font-size: 14px;
+  text-transform: capitalize;
+  text-align: left;
+}
+.projectContainer .content section:nth-of-type(2n-1) {
+  background-color: rgba(0,165,145,0.5);
+  color: #005f53;
+}
+.projectContainer .content section:nth-of-type(2n-1) h2 {
+  color: #005f53;
 }
