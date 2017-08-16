@@ -18,26 +18,43 @@ body
 	.mainContainer
 		flex: 1 1 auto
 
-	&.blogs
+	&.blogs, &.blog
 		header
 			ul
 				li
 					&:first-child
 						color: $violet
 
-	&.projects
+	&.projects, &.project
 		header
 			ul
 				li
 					&:nth-child(2)
 						color: $violet
 
-	&.writings
+	&.writings, &.writing
 		header
 			ul
 				li
 					&:last-child
 						color: $violet
+
+	&.writing, &.project, &.blog
+		footer
+			.moto
+				display: none
+
+			.contactInfoContainer
+				background-color: $soft_gray
+
+				span
+					&:before, &:after
+						color: $gray
+
+					&:hover
+						&:before, &:after
+							color: white
+		
 	
 header
 	width: 100%
@@ -286,6 +303,9 @@ footer
 			justify-content: center
 			align-items: center
 			padding: 15px
+
+			&:before, &:after
+				transition: color $time
 
 			&:before
 				font-size: 40px
