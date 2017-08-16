@@ -1176,3 +1176,45 @@ footer .rights {
 .writingsContainer ul li:last-child {
   margin-bottom: 10px;
 }
+.blogContainer .identifierEntry {
+  text-align: center;
+  margin: 25px;
+}
+.blogContainer .identifierEntry img {
+  display: inline-block;
+}
+.blogContainer .title {
+  text-transform: uppercase;
+  text-align: center;
+  color: #9e005d;
+  width: 100%;
+  padding: 10px 30px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.blogContainer .content {
+  padding: 10px 25px;
+}
+.blogContainer .content p {
+  text-align: justify;
+  line-height: 22px;
+  letter-spacing: 0.4px;
+}
+.blogContainer .content p:first-child:first-letter {
+  color: #9e005d;
+}
+.blogContainer .content img {
+  width: 100%;
+  margin: 20px 0;
+}
+.blogContainer .content h2 {
+  font-size: 14px;
+  color: #9e005d;
+  text-transform: capitalize;
+  margin-top: 32px;
+}
+.blogContainer .content a {
+  color: #b2b2b1;
+}
