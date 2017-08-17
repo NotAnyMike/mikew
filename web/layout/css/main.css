@@ -1401,6 +1401,9 @@ footer .rights {
 .writingContainer .content section:nth-of-type(2n-1) h2 {
   color: #005f53;
 }
+.writingContainer .title {
+  margin-top: 30px;
+}
 .writingContainer .content section:nth-of-type(2n-1) {
   color: #878786;
   background-color: transparent;
