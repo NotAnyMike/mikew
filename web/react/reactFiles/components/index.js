@@ -5,8 +5,10 @@ const React = require('react'),
 			Footer = require('./footer.js'),
 			IndexContainer = require('./indexContainer.js');
 
-
 var Index = class Index extends React.Component{
+
+	static componentWillMount() {
+	};
 
 	render() {
 		return (
@@ -18,4 +20,5 @@ var Index = class Index extends React.Component{
 		)
 	};
 };
+
 module.exports = Index; 
