@@ -4,11 +4,12 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
+    "gulp": "^3.9.1",
     "gulp-cli": "^1.4.0",
     "gulp-refresh": "^1.1.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp": "^3.9.1",
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel": "^6.23.0",

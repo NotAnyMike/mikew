@@ -1,7 +1,7 @@
 'use strict';
 
-//const React = require('react');
-import React from 'react';
+const React = require('react');
+const PropTypes = require('prop-types');
 
 class SomeWorksSingleItem extends React.Component {
 	
@@ -15,6 +15,9 @@ class SomeWorksSingleItem extends React.Component {
 	};
 };
 
-SomeWorksSingleItem.propTypes = {};
+SomeWorksSingleItem.propTypes = {
+	title: PropTypes.string.isRequired,
+	body: PropTypes.string.isRequired,
+};
 
 module.exports = SomeWorksSingleItem;

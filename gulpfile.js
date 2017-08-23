@@ -8,6 +8,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var reactify = require('reactify');
 var buffer = require('vinyl-buffer');
+var babelify = require('babelify');
 
 var sourcemaps = require('gulp-sourcemaps');
 

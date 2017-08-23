@@ -15,7 +15,7 @@ const SomeWorks = class SomeWorks extends React.Component {
 				<ul>
 					<div className="left"></div>
 					<div className="right"></div>
-					<SomeWorksSingleItem />
+					<SomeWorksSingleItem title="inteligencia artificial" body="sentiment analysis for some politician" />
 					<li>
 						<span className="title">nintendo</span>
 						<span className="body">Modification of the Nintendo classNameic</span>
