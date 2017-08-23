@@ -15,13 +15,15 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('copy-fonts', function(){
 	gulp.src('./resources/mikew-font/icomoon/fonts/*')
 	.pipe(gulp.dest('./web/layout/css/fonts/'))
-	.pipe(gulp.dest('./web/react/css/fonts/'));
+	.pipe(gulp.dest('./web/react/css/fonts/'))
+	.pipe(gulp.dest('./web/django/mikew/website/static/css/fonts/'));
 });
 
 gulp.task('copy-imgs', function(){
 	gulp.src('./resources/imgs/*')
 	.pipe(gulp.dest('./web/layout/img/'))
-	.pipe(gulp.dest('./web/react/img/'));
+	.pipe(gulp.dest('./web/react/img/'))
+	.pipe(gulp.dest('./web/django/mikew/website/static/img/'));
 });
 
 gulp.task('copy-files', ['copy-imgs','copy-fonts']);
@@ -30,7 +32,8 @@ gulp.task('stylus-dev', function(){
 	return gulp.src('./web/layout/stylus/main.styl')
 		.pipe(stylus({'include css':true, use: nib()}))
 		.pipe(gulp.dest('./web/layout/css'))
-		.pipe(gulp.dest('./web/react/'))
+		.pipe(gulp.dest('./web/react/css'))
+		.pipe(gulp.dest('./web/django/mikew/website/static/css'))
 		.pipe(refresh());
 });
 
@@ -45,6 +48,7 @@ gulp.task('react-dev', function(){
     .pipe(source('./main.js'))
     .pipe(buffer())
     .pipe(gulp.dest('./web/react/js/'))
+		.pipe(gulp.dest('./web/django/mikew/website/static/js'))
 		.pipe(refresh());
 });
 
