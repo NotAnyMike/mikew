@@ -3,16 +3,18 @@
 var React = require('react'),
 		ReactDOM = require('react-dom');
 
-var Router = require('react-router').Router;
 var Route = require('react-router').Route;
-var Link = require('react-router').Link;
+var BrowserRouter = require('react-router-dom').BrowserRouter;
 var browserHistory = require('react-router').browserHistory;
 
 var Index = require('./components/index.js');
 
 ReactDOM.render(
-	(<Router history={browserHistory}>
-			<Route path="/" component={Index}/>
-		</Router>),
-	document.getElementById('mainContainer')
+	(
+		<BrowserRouter history={browserHistory}>
+			<div>
+				<Route path="/" component={Index} />
+			</div>
+		</BrowserRouter>
+	),document.getElementById('mainContainer')
 );

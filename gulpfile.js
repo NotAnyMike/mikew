@@ -4,7 +4,11 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var refresh = require('gulp-refresh');
 var nib = require('nib');
-var browserify = require('browserify');
+var browserify = require('gulp-browserify');
+var browserify2 = require('browserify');
+var source = require('vinyl-source-stream');
+var reactify = require('reactify');
+var buffer = require('vinyl-buffer');
 
 var sourcemaps = require('gulp-sourcemaps');
 
@@ -16,12 +20,18 @@ gulp.task('stylus-dev', function(){
 });
 
 gulp.task('react-dev', function(){
-	return browserify('./web/react/reactFiles/main.js')
-	.transform("babelify", {presets: ['react']})
-	.bundle()
-	.pipe(source('main.js'))
-	.pipe(gulp.dest('./web/react.js'))
-	.pipe(refresh());
+	var b = browserify2({
+		entries: './web/react/reactFiles/main.js',
+		debug: true,
+		// defining transforms here will avoid crashing your stream
+		transform: [reactify]
+	});
+
+  return b.bundle()
+    .pipe(source('./main.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest('./web/react/js/'))
+		.pipe(refresh());
 });
 
 gulp.task('w-stylus', function(){
@@ -31,5 +41,5 @@ gulp.task('w-stylus', function(){
 
 gulp.task('w-react', function(){
 	refresh.listen();
-	gulp.watch('./web/react/react/reactFiles/**/*.js', ['react-dev']);
+	gulp.watch('./web/react/reactFiles/**/*.js', ['react-dev']);
 });
