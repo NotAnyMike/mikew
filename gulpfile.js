@@ -4,26 +4,39 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var refresh = require('gulp-refresh');
 var nib = require('nib');
-var browserify = require('gulp-browserify');
-var browserify2 = require('browserify');
+var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var reactify = require('reactify');
 var buffer = require('vinyl-buffer');
 
 var sourcemaps = require('gulp-sourcemaps');
 
+gulp.task('copy-fonts', function(){
+	gulp.src('./resources/mikew-font/icomoon/fonts/*')
+	.pipe(gulp.dest('./web/layout/css/fonts/'))
+	.pipe(gulp.dest('./web/react/css/fonts/'));
+});
+
+gulp.task('copy-imgs', function(){
+	gulp.src('./resources/imgs/*')
+	.pipe(gulp.dest('./web/layout/img/'))
+	.pipe(gulp.dest('./web/react/img/'));
+});
+
+gulp.task('copy-files', ['copy-imgs','copy-fonts']);
+
 gulp.task('stylus-dev', function(){
 	return gulp.src('./web/layout/stylus/main.styl')
 		.pipe(stylus({'include css':true, use: nib()}))
 		.pipe(gulp.dest('./web/layout/css'))
+		.pipe(gulp.dest('./web/react/'))
 		.pipe(refresh());
 });
 
 gulp.task('react-dev', function(){
-	var b = browserify2({
+	var b = browserify({
 		entries: './web/react/reactFiles/main.js',
 		debug: true,
-		// defining transforms here will avoid crashing your stream
 		transform: [reactify]
 	});
 
@@ -41,5 +54,5 @@ gulp.task('w-stylus', function(){
 
 gulp.task('w-react', function(){
 	refresh.listen();
-	gulp.watch('./web/react/reactFiles/**/*.js', ['react-dev']);
+	gulp.watch('./web/react/reactFiles/components/**/*.js', ['react-dev']);
 });
