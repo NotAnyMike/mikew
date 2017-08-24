@@ -22,7 +22,7 @@ gulp.task('copy-fonts', function(){
 gulp.task('copy-imgs', function(){
 	gulp.src('./resources/imgs/*')
 	.pipe(gulp.dest('./web/layout/img/'))
-	.pipe(gulp.dest('./web/react/img/'))
+	.pipe(gulp.dest('./web/react/static/img/'))
 	.pipe(gulp.dest('./web/django/mikew/website/static/img/'));
 });
 
@@ -59,5 +59,5 @@ gulp.task('w-stylus', function(){
 
 gulp.task('w-react', function(){
 	refresh.listen();
-	gulp.watch('./web/react/reactFiles/components/**/*.js', ['react-dev']);
+	gulp.watch('./web/react/reactFiles/**/*.js', ['react-dev']);
 });
