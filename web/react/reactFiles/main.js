@@ -1,19 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var Route = require('react-router').Route;
-var BrowserRouter = require('react-router-dom').BrowserRouter;
-var browserHistory = require('react-router').browserHistory;
+import {browserHistory} from 'react-router';
+import {Route, BrowserRouter} from 'react-router-dom';
 
 //var Index = require('./components/index.js');
 import IndexContainer from './containers/IndexContainer.js';
+import Blogs from './components/Blogs';
+import Blog from './components/Blog';
+import Project from './components/Project';
+import Writings from './components/Writings';
+import Writing from './components/Writing';
 
 ReactDOM.render(
-	/*(
+	(
 		<BrowserRouter history={browserHistory}>
 			<div>
-				<Route path="/" component={Index} />
+				<Route exact path="/" component={IndexContainer} />
+				<Route exact path="/blogs/" blogs={true} component={Blogs} />
+				<Route exact path="/projects/" blogs={false} component={Blogs} />
+				<Route exact path="/writings/" component={Writings} />	
+				<Route exact path="/blog/" component={Blog} />
+				<Route exact path="/project/" component={Project} />
+				<Route exact path="/writing/" component={Writing} />	
 			</div>
 		</BrowserRouter>
-	)*/<IndexContainer />,document.getElementById('mainContainer')
+	),document.getElementById('mainContainer')
 );

@@ -1,8 +1,34 @@
 'use strict';
 
-const React = require('react');
+import React from 'react';
+import Router, {browserHistory, Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const header = class Header extends React.Component {
+class Header extends React.Component {
+
+	constructor(props){
+		super(props)
+		this.onBlogClickHandler = this.onBlogClickHandler.bind(this);
+		this.onProjectsClickHandler = this.onProjectsClickHandler.bind(this);
+		this.onWritingsClickHandler = this.onWritingsClickHandler.bind(this);
+	}
+
+	static propTypes(){
+		history: PropTypes.object.isRequired
+	}
+
+	onBlogClickHandler() {
+		this.props.history.push('/blogs/');
+	}
+
+	onProjectsClickHandler(){
+		this.props.history.push('/projects/');
+	}
+
+	onWritingsClickHandler(){
+		this.props.history.push('/writings/');
+	}
+
 	render() {
 		return (	
 			<header>
@@ -17,13 +43,13 @@ const header = class Header extends React.Component {
 					</div>
 				 </div>
 				 <ul>
-					<li>blog</li>
-					<li>projects</li>
-					<li>writings</li>
+					<li onClick={this.onBlogClickHandler}>blog</li>
+					<li onClick={this.onProjectsClickHandler}>projects</li>
+					<li onClick={this.onWritingsClickHandler}>writings</li>
 				 </ul>
 			</header>
 		)
 	}
 };
 
-module.exports = header;
+export default Header;

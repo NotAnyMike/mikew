@@ -8,3 +8,7 @@ class MotoAdmin(admin.ModelAdmin):
 @admin.register(models.ShortInfo)
 class ShortInfoAdmin(admin.ModelAdmin):
     list_display = ('pk', 'text', 'date')
+
+@admin.register(models.Blog)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title', 'date')

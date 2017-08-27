@@ -18,8 +18,7 @@ class IndexContainer extends Component {
 	}
 
 	render() {
-		console.log(this.state)
-		return <Index {...this.state.index} />;
+		return <Index history={this.props.history} {...this.state.index} />;
 	}
 }
 
