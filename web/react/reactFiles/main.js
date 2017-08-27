@@ -18,7 +18,7 @@ ReactDOM.render(
 			<div>
 				<Route exact path="/" component={IndexContainer} />
 				<Route exact path="/blogs/" blogs={true} component={BlogsContainer} />
-				<Route exact path="/projects/" blogs={false} component={Blogs} />
+				<Route exact path="/projects/" blogs={false} component={BlogsContainer} />
 				<Route exact path="/writings/" component={Writings} />	
 				<Route exact path="/blog/" component={Blog} />
 				<Route exact path="/project/" component={Project} />

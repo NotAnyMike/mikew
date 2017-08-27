@@ -4,31 +4,31 @@ import BlogProjectEntry from './BlogProjectEntry';
 
 class BlogsProjectsDivContainer extends Component {
 
-	static propTypes() {
-		isBlogs: PropTypes.bool.isRequired
-	}
-
 	render(){
+		var className = "mainContainer " + (this.props.isBlogs ? "blogsContainer" : "projectsContainer");
+
+		var list = [];
+		if(this.props.list && Array.isArray(this.props.list)){
+			this.props.list.map(element => {list.push(<BlogProjectEntry 
+					img={element.img_header} 
+					text={element.small_sentence} 
+					key={element.pk} 
+					slug={element.slug}
+				/>)});
+		}
+
 		return (
-			<div className="mainContainer blogsContainer">
+			<div className={className}>
 				<ul>
-					<BlogProjectEntry />
-					<li>
-						<figure className="identifierBlogList"><img src="/static/img/apple.png" alt=""></img></figure>
-						<span className="bodyBlogList">Making the terminal look cool</span>
-					</li>
-					<li>
-						<figure className="identifierBlogList"><img src="/static/img/css.png" alt=""></img></figure>
-						<span className="bodyBlogList">Use css to make a custom check button</span>
-					</li>
-					<li>
-						<figure className="identifierBlogList"><img src="/static/img/flux.png" alt=""></img></figure>
-						<span className="bodyBlogList">Use firebase to have a very optimized chanel</span>
-					</li>
+					{list}
 				</ul>
 			</div>
 		)
 	}
+}
+
+BlogsProjectsDivContainer.propTypes = {
+	isBlogs: PropTypes.bool.isRequired,
 }
 
 export default BlogsProjectsDivContainer

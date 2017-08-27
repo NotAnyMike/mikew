@@ -1,15 +1,22 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class BlogProjectEntry extends Component{
 
 	render(){
 		return (
 			<li>
-				<figure className="identifierBlogList"><img src="/static/img/firebase.png" alt=""></img></figure>
-				<span className="bodyBlogList">Use firebase to create a chat under an hour</span>
+				<figure className="identifierBlogList"><img src={this.props.img} alt=""></img></figure>
+				<span className="bodyBlogList">{this.props.text}</span>
 			</li>
 		)
 	}
 }
+
+BlogProjectEntry.propTypes = {
+	img: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
+	slug: PropTYpes.string.isRequired,
+};
 
 export default BlogProjectEntry;

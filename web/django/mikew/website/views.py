@@ -30,7 +30,15 @@ def index_json(req):
 @api_view(['GET'])
 def blogs_json(req):
     if req.method == 'GET':
+        moto = Moto.objects.order_by('-date')[0]
+        motoSerializer = MotoSerializer(moto, many=False)
+
         blogs = Blog.objects.filter(visible=True).order_by('-date')
         blogSerializer = BlogSerializer(blogs, many=True)
 
-        return Response(blogSerializer.data)
+        toReturn = {
+            'moto': motoSerializer.data,
+            'blogs': blogSerializer.data,
+            }
+
+        return Response(toReturn)

@@ -9,24 +9,25 @@ import WsStore from '../data/wsStore.js';
 
 class Blogs extends Component{
 
-	static propTypes(){
-		//blogs: PropTypes.bool.isRequired
-	}
-
 	componentWillMount() {
-		//Actions.getIndex()
+		Actions.getBlogs()
 	};
 
 	render() {
-		var className = "bodyContainer " + (this.props.blogs === true? " blogs" : " projects");
+		var className = "bodyContainer " + (this.props.isBlogs === true? " blogs" : " projects");
 		return (
 			<div className={className}>
 				<Header history={this.props.history} />
-				<BlogsProjectsDivContainer shortInfo={this.props.shortInfo}/>
+				<BlogsProjectsDivContainer list={this.props.list} isBlogs={this.props.isBlogs}/>
 				<Footer moto={this.props.moto}/>
 			</div>
 		)
 	};
 };
+
+Blogs.propTypes = {
+		isBlogs: PropTypes.bool.isRequired,
+		list: PropTypes.array.isRequired,
+}
 
 export default Blogs;

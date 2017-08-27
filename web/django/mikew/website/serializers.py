@@ -14,4 +14,4 @@ class ShortInfoSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Blog
-        fields = ('title','slug','small_sentence','img_header','summary',)
+        fields = ('pk','title','slug','small_sentence','img_header','summary',)
