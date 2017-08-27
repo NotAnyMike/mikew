@@ -6,7 +6,7 @@ import {Route, BrowserRouter} from 'react-router-dom';
 
 //var Index = require('./components/index.js');
 import IndexContainer from './containers/IndexContainer.js';
-import Blogs from './components/Blogs';
+import BlogsContainer from './containers/BlogsContainer';
 import Blog from './components/Blog';
 import Project from './components/Project';
 import Writings from './components/Writings';
@@ -17,7 +17,7 @@ ReactDOM.render(
 		<BrowserRouter history={browserHistory}>
 			<div>
 				<Route exact path="/" component={IndexContainer} />
-				<Route exact path="/blogs/" blogs={true} component={Blogs} />
+				<Route exact path="/blogs/" blogs={true} component={BlogsContainer} />
 				<Route exact path="/projects/" blogs={false} component={Blogs} />
 				<Route exact path="/writings/" component={Writings} />	
 				<Route exact path="/blog/" component={Blog} />

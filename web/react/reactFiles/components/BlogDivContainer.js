@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class BlogContainer extends Component{
+class BlogDivContainer extends Component{
 	render(){
 		return (
 			<div className="mainContainer blogContainer">
@@ -22,4 +22,4 @@ class BlogContainer extends Component{
 	}
 }
 
-export default BlogContainer
+export default BlogDivContainer

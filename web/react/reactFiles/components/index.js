@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Header from './header.js';
-import Footer from './footer.js';
-import IndexContainer from './indexContainer.js';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import IndexContainer from './IndexDivContainer.js';
 import Actions from '../data/actions.js';
 
 import WsStore from '../data/wsStore.js';

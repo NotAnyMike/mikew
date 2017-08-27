@@ -10,6 +10,8 @@ import Functions from '../utils/functions.js';
 
 var _store = {
 	index: {},
+	blogs: {},
+	moto: {},
 }
 
 class WsStore extends ReduceStore {
@@ -32,7 +34,6 @@ class WsStore extends ReduceStore {
 		Functions.fetchAdvanced('/api/index/').then((resp) => resp.json()).then((json) => {
 			_store.index = json;
 			//emit event with index
-			//WsStore.emit(EventTypes.Index, json);
 			Actions.receiveIndex(json);
 		});
 		return _store.index
@@ -50,12 +51,12 @@ class WsStore extends ReduceStore {
 		switch(action.type){
 			case ActionTypes.GET_INDEX:
 				this.getIndex()
-				_store.date = Date()
-				return Date()
+				return _store
 
 			case ActionTypes.RECEIVE_INDEX:
 				_store.index = action.index
-				return action.index;
+				_store.moto = action.index.moto
+				return _store;
 
 			default:
 				return _store;
