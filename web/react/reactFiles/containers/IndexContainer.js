@@ -1,18 +1,25 @@
-import AppView from '../components/AppView';
-import Index from '../components/index';
+import React, {Component} from 'react';
 import {Container} from 'flux/utils';
-import WsStore from '../data/wsStore';
+import Index from '../components/index.js';
+import WsStore from '../data/wsStore.js';
 
-function getStores() {
-  return [
-    WsStore,
-  ];
+class IndexContainer extends Component {
+
+	static getStores() {
+		return [
+			WsStore,
+		];
+	}
+
+	static calculateState() {
+		return {
+			index: WsStore.getState(),
+		};
+	}
+
+	render() {
+		return <Index />;
+	}
 }
 
-function getState() {
-  return {
-    todos: WsStore.getState(),
-  };
-}
-
-export default Container.createFunctional(AppView, getStores, getState);
+export default Container.create(IndexContainer);

@@ -1,13 +1,11 @@
-'use strict';
+import React, {Component} from 'react';
+import Header from './header.js';
+import Footer from './footer.js';
+import IndexContainer from './indexContainer.js';
 
-const React = require('react'),
-			Header = require('./header.js'),
-			Footer = require('./footer.js'),
-			IndexContainer = require('./indexContainer.js');
+import WsStore from '../data/wsStore.js';
 
-var WsStore = require('../data/wsStore.js');
-
-class Index extends React.Component{
+class Index extends Component{
 
 	static componentWillMount() {
 		//console.log(WsStore.getIndex())

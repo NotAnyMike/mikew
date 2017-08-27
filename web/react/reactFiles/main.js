@@ -1,7 +1,5 @@
-'use strict';
-
-var React = require('react'),
-		ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 var Route = require('react-router').Route;
 var BrowserRouter = require('react-router-dom').BrowserRouter;
