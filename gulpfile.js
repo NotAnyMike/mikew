@@ -41,10 +41,11 @@ gulp.task('react-dev', function(){
 	var b = browserify({
 		entries: './web/react/reactFiles/main.js',
 		debug: true,
-		transform: [reactify]
+		transform: [babelify]
 	});
 
-  return b.bundle()
+  return b
+		.bundle()
     .pipe(source('./main.js'))
     .pipe(buffer())
     .pipe(gulp.dest('./web/react/js/'))

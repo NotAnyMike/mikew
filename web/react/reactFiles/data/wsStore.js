@@ -1,12 +1,12 @@
 'use strict';
 
-const ReduceStore = require('flux/utils').ReduceStore,
-			EventEmitter = require('events'),
-			ActionTypes = require('./actionTypes.js'),
-			WsDispatcher = require('./wsDispatcher.js'),
-			EventTypes = require('./eventTypes.js');
+import {ReduceStore} from 'flux/utils';
+import EventEmitter from 'events';
+import ActionTypes from './actionTypes.js';
+import WsDispatcher from './wsDispatcher.js';
+import EventTypes from './eventTypes.js';
 
-const Functions = require('../utils/functions.js');
+import Functions from '../utils/functions.js';
 
 var _store = {}
 
@@ -16,7 +16,7 @@ class WsStore extends ReduceStore {
 		super(WsDispatcher);
 	}
 
-	static getInitialState(){
+	getInitialState(){
 		return {}
 	}
 
@@ -53,4 +53,4 @@ class WsStore extends ReduceStore {
 
 };
 
-module.exports = WsStore;
+export default new WsStore();

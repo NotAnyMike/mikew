@@ -7,14 +7,13 @@ const React = require('react'),
 
 var WsStore = require('../data/wsStore.js');
 
-var Index = class Index extends React.Component{
+class Index extends React.Component{
 
 	static componentWillMount() {
-		console.log(WsStore.getIndex())
+		//console.log(WsStore.getIndex())
 	};
 
 	render() {
-		console.log(WsStore.getIndex())
 		return (
 			<div className="bodyContainer">
 				<Header />
@@ -25,4 +24,4 @@ var Index = class Index extends React.Component{
 	};
 };
 
-module.exports = Index; 
+export default Index;
