@@ -14,7 +14,8 @@ class BlogsProjectsDivContainer extends Component {
 					text={element.small_sentence} 
 					key={element.pk} 
 					slug={element.slug}
-				/>)});
+					goToEntryFn={this.props.goToEntryFn}
+				/>)}, this);
 		}
 
 		return (
@@ -29,6 +30,7 @@ class BlogsProjectsDivContainer extends Component {
 
 BlogsProjectsDivContainer.propTypes = {
 	isBlogs: PropTypes.bool.isRequired,
+	goToEntryFn: PropTypes.func.isRequired,
 }
 
 export default BlogsProjectsDivContainer

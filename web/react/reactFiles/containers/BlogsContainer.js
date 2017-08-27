@@ -20,7 +20,7 @@ class BlogsContainer extends Component {
 	}
 
 	render() {
-		return <Blogs history={this.props.history} list={this.state.blogs} isBlogs={true} />;
+		return <Blogs history={this.props.history} moto={this.state.moto} list={this.state.blogs} isBlogs={true} />;
 	}
 }
 

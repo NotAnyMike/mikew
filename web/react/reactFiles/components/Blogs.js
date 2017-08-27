@@ -9,16 +9,26 @@ import WsStore from '../data/wsStore.js';
 
 class Blogs extends Component{
 
+	constructor(props) {
+		super(props)
+		this.goToEntry = this.goToEntry.bind(this);
+	}
+
 	componentWillMount() {
 		Actions.getBlogs()
 	};
+
+	goToEntry(slug) {
+		var path = (this.props.isBlogs ? "/blog/" : "/project/") + slug + "/"
+		this.props.history.push(path);
+	}
 
 	render() {
 		var className = "bodyContainer " + (this.props.isBlogs === true? " blogs" : " projects");
 		return (
 			<div className={className}>
 				<Header history={this.props.history} />
-				<BlogsProjectsDivContainer list={this.props.list} isBlogs={this.props.isBlogs}/>
+				<BlogsProjectsDivContainer list={this.props.list} isBlogs={this.props.isBlogs} goToEntryFn={this.goToEntry}/>
 				<Footer moto={this.props.moto}/>
 			</div>
 		)
