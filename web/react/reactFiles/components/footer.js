@@ -1,14 +1,22 @@
 'use strict';
 
-const React = require('react');
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Footer = class Footer extends React.Component {
+class Footer extends React.Component {
+
+	static propTypes() {
+		moto: PropTypes.object.isRequired()
+	}
+
 	render() {
+		var motoText = this.props.moto ? this.props.moto.text : "loading...";
+		var motoAuthor = this.props.moto ? this.props.moto.author : "loading..."
 		return (
 			<footer>
 				<div className="moto">
-					<div className="text">"You must do the things you think you cannot do”</div>
-					<div className="by">- Eleanor Rossevelt</div>
+					<div className="text">"{motoText}"</div>
+					<div className="by">- {motoAuthor}</div>
 				</div>
 				<div className="contactInfoContainer">
 					<span className="fb"></span>

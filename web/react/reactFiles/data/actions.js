@@ -8,6 +8,13 @@ const Actions = {
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_INDEX,
 		});
+	},
+
+	receiveIndex(index){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_INDEX,
+			index: index,
+		});
 	}
 };
 

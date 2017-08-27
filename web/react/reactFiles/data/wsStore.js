@@ -1,14 +1,16 @@
 'use strict';
 
 import {ReduceStore} from 'flux/utils';
-import EventEmitter from 'events';
 import ActionTypes from './actionTypes.js';
+import Actions from './actions.js';
 import WsDispatcher from './wsDispatcher.js';
 import EventTypes from './eventTypes.js';
 
 import Functions from '../utils/functions.js';
 
-var _store = {}
+var _store = {
+	index: {},
+}
 
 class WsStore extends ReduceStore {
 
@@ -17,25 +19,30 @@ class WsStore extends ReduceStore {
 	}
 
 	getInitialState(){
-		return {}
+		return {index: {
+			moto: {
+				author: "Eleanor Rossevelt",
+				text: "You must do the things you think you cannot do",
+			},
+			shortInfo: {text: "I’m Mike Woodcock, an Economist, student of matematics and empirical engineer. Currently working on Artificial Intelligence, Simulation and Distributed Applications.<br> </br>Always open to new an interesting projects."},
+		}}
 	}
 
-	static getIndex(){
+	getIndex(){
 		Functions.fetchAdvanced('/api/index/').then((resp) => resp.json()).then((json) => {
-			console.log(json);
 			_store.index = json;
 			//emit event with index
-			debugger
-			WsStore.emit(EventTypes.Index, json);
+			//WsStore.emit(EventTypes.Index, json);
+			Actions.receiveIndex(json);
 		});
-		return {title: "hol"};
+		return _store.index
 	}
 
-	static addIndexListener(callback) {
+	addIndexListener(callback) {
 		this.addListener(EventTypes.Index, callback)
 	}
 
-	static removeIndexListener(callback){
+	removeIndexListener(callback){
 		this.removeListener(EventTypes.Index, callback)
 	}
 
@@ -43,7 +50,12 @@ class WsStore extends ReduceStore {
 		switch(action.type){
 			case ActionTypes.GET_INDEX:
 				this.getIndex()
-				return _store;
+				_store.date = Date()
+				return Date()
+
+			case ActionTypes.RECEIVE_INDEX:
+				_store.index = action.index
+				return action.index;
 
 			default:
 				return _store;

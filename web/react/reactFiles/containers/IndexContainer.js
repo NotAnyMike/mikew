@@ -18,7 +18,8 @@ class IndexContainer extends Component {
 	}
 
 	render() {
-		return <Index />;
+		console.log(this.state)
+		return <Index {...this.state.index} />;
 	}
 }
 
