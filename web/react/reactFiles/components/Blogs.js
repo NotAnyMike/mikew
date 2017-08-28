@@ -15,7 +15,8 @@ class Blogs extends Component{
 	}
 
 	componentWillMount() {
-		Actions.getBlogs()
+		if(this.props.isBlogs === true) Actions.getBlogs();
+		else Actions.getProjects();
 	};
 
 	goToEntry(slug) {

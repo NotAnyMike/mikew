@@ -4,9 +4,30 @@ const ActionTypes = require('./actionTypes.js'),
 			WsDispatcher = require('./wsDispatcher.js');
 
 const Actions = {
-	getBlogs(){
+	getProject(slug){
 		WsDispatcher.dispatch({
-			type: ActionTypes.GET_BLOGS,
+			type: ActionTypes.GET_PROJECT,
+			slug: slug
+		});
+	},
+
+	receiveProject(project){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_PROJECT,
+			project: project,
+		});
+	},
+	
+	getProjects(){
+		WsDispatcher.dispatch({
+			type: ActionTypes.GET_PROJECTS,
+		});
+	},
+
+	receiveProjects(projects){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_PROJECTS,
+			projects: projects,
 		});
 	},
 
@@ -14,6 +35,26 @@ const Actions = {
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_BLOG,
 			slug: slug
+		});
+	},
+
+	receiveBlog(blog){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_BLOG,
+			blog: blog,
+		});
+	},
+	
+	getBlogs(){
+		WsDispatcher.dispatch({
+			type: ActionTypes.GET_BLOGS,
+		});
+	},
+
+	receiveBlogs(blogs){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_BLOGS,
+			blogs: blogs,
 		});
 	},
 
@@ -27,20 +68,6 @@ const Actions = {
 		WsDispatcher.dispatch({
 			type: ActionTypes.RECEIVE_INDEX,
 			index: index,
-		});
-	},
-
-	receiveBlog(blog){
-		WsDispatcher.dispatch({
-			type: ActionTypes.RECEIVE_BLOG,
-			blog: blog,
-		});
-	},
-
-	receiveBlogs(blogs){
-		WsDispatcher.dispatch({
-			type: ActionTypes.RECEIVE_BLOGS,
-			blogs: blogs,
 		});
 	},
 };

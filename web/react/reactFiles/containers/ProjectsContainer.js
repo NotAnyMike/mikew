@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Blogs from '../components/Blogs.js';
 import WsStore from '../data/wsStore.js';
 
-class BlogsContainer extends Component {
+class ProjectsContainer extends Component {
 
 	static getStores() {
 		return [
@@ -15,23 +15,22 @@ class BlogsContainer extends Component {
 	static calculateState() {
 		return {
 			moto: WsStore.getState().moto,
-			blogs: WsStore.getState().blogs,
+			projects: WsStore.getState().projects,
 		};
 	}
 
 	render() {
-		var isBlogs = true;
+		var isBlogs = false;
 
 		return <Blogs 
-				history={this.props.history} 
-				moto={this.state.moto} 
-				list={this.state.blogs} 
-				isBlogs={isBlogs} 
-			/>;
+			history={this.props.history} 
+			moto={this.state.moto} 
+			list={this.state.projects} 
+			isBlogs={isBlogs} />;
 	}
 }
 
-BlogsContainer.propTypes = {
+ProjectsContainer.propTypes = {
 }
 
-export default Container.create(BlogsContainer);
+export default Container.create(ProjectsContainer);

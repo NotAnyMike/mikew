@@ -12,3 +12,11 @@ class ShortInfoAdmin(admin.ModelAdmin):
 @admin.register(models.Blog)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('pk', 'title', 'date')
+    
+@admin.register(models.Project)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title', 'date')
+
+@admin.register(models.Tech)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title')

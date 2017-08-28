@@ -8,7 +8,8 @@ import {Route, BrowserRouter} from 'react-router-dom';
 import IndexContainer from './containers/IndexContainer.js';
 import BlogsContainer from './containers/BlogsContainer';
 import BlogContainer from './containers/BlogContainer';
-import Project from './components/Project';
+import ProjectsContainer from './containers/ProjectsContainer';
+import ProjectContainer from './containers/ProjectContainer';
 import Writings from './components/Writings';
 import Writing from './components/Writing';
 
@@ -18,10 +19,10 @@ ReactDOM.render(
 			<div>
 				<Route exact path="/" component={IndexContainer} />
 				<Route exact path="/blogs/" component={BlogsContainer} />
-				<Route exact path="/projects/" component={BlogsContainer} />
+				<Route exact path="/projects/" component={ProjectsContainer} />
 				<Route exact path="/writings/" component={Writings} />	
 				<Route exact path="/blog/:slug/" component={BlogContainer} />
-				<Route exact path="/project/:slug/" component={Project} />
+				<Route exact path="/project/:slug/" component={ProjectContainer} />
 				<Route exact path="/writing/:slug/" component={Writing} />	
 			</div>
 		</BrowserRouter>

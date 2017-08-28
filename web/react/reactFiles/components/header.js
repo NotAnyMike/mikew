@@ -11,6 +11,7 @@ class Header extends React.Component {
 		this.onBlogClickHandler = this.onBlogClickHandler.bind(this);
 		this.onProjectsClickHandler = this.onProjectsClickHandler.bind(this);
 		this.onWritingsClickHandler = this.onWritingsClickHandler.bind(this);
+		this.onIdentifierClickHandler = this.onIdentifierClickHandler.bind(this);
 	}
 
 	static propTypes(){
@@ -29,11 +30,15 @@ class Header extends React.Component {
 		this.props.history.push('/writings/');
 	}
 
+	onIdentifierClickHandler(){
+		this.props.history.push('/');
+	}
+
 	render() {
 		return (	
 			<header>
 				 <div className="identifierContainer">
-					<div className="identifier">
+					<div className="identifier" onClick={this.onIdentifierClickHandler}>
 						<div className="isotype"></div>
 						<div className="logo"></div>
 					</div>

@@ -4,8 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .models import Moto, ShortInfo, Blog
-from .serializers import MotoSerializer, ShortInfoSerializer, BlogSerializer, CompleteBlogSerializer
+from .models import Moto, ShortInfo, Blog, Project
+from .serializers import MotoSerializer, ShortInfoSerializer, BlogSerializer, CompleteBlogSerializer, ProjectSerializer, CompleteProjectSerializer
 
 def index(req):
     index = render(req, 'index.html')
@@ -42,6 +42,22 @@ def blogs_json(req):
             }
 
         return Response(toReturn)
+        
+@api_view(['GET'])
+def projects_json(req):
+    if req.method == 'GET':
+        moto = Moto.objects.order_by('-date')[0]
+        motoSerializer = MotoSerializer(moto, many=False)
+
+        projects = Project.objects.filter(visible=True).order_by('-date')
+        projectSerializer = ProjectSerializer(projects, many=True)
+
+        toReturn = {
+            'moto': motoSerializer.data,
+            'projects': projectSerializer.data,
+            }
+
+        return Response(toReturn)
 
 @api_view(['GET'])
 def blog_json(req, slug):
@@ -50,3 +66,11 @@ def blog_json(req, slug):
         blogSerializer = CompleteBlogSerializer(blog, many=False)
 
         return Response(blogSerializer.data)
+
+@api_view(['GET'])
+def project_json(req, slug):
+    if req.method == 'GET':
+        project = Project.objects.filter(slug=slug).order_by('-date')[0]
+        projectSerializer = CompleteProjectSerializer(project, many=False)
+
+        return Response(projectSerializer.data)

@@ -9,24 +9,26 @@ import WsStore from '../data/wsStore.js';
 
 class Project extends Component{
 
-	static propTypes(){
-		//blogs: PropTypes.bool.isRequired
-	}
-
 	componentWillMount() {
-		//Actions.getIndex()
+		Actions.getProject(this.props.slug)
 	};
 
 	render() {
-		var className = "bodyContainer " + (this.props.blogs === true? " blogs" : " projects");
+		var className = "bodyContainer project";
 		return (
 			<div className={className}>
 				<Header history={this.props.history} />
-				<ProjectDivContainer />
+				<ProjectDivContainer project={this.props.project}/>
 				<Footer moto={this.props.moto}/>
 			</div>
 		)
 	};
 };
+
+
+Project.propTypes = {
+	slug: PropTypes.string.isRequired,
+	blog: PropTypes.object.isRequired,
+}
 
 export default Project;

@@ -66,7 +66,6 @@ class WsStore extends ReduceStore {
 	}
 
 	getProjects(){
-		debugger
 		Functions.fetchAdvanced('/api/projects/').then((resp) => resp.json()).then((json) => {
 			_store.projects = json;
 			Actions.receiveProjects(json);
