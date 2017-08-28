@@ -19,10 +19,14 @@ def index_json(req):
 
         shortInfo = ShortInfo.objects.order_by('-date')[0]
         shortInfoSerializer = ShortInfoSerializer(shortInfo, many=False)
+        
+        projects = Project.objects.filter(visible=True).order_by('-date')[:5]
+        projectSerializer = ProjectSerializer(projects, many=True)
 
         toReturn = {
                 'moto': motoSerializer.data,
-                'shortInfo': shortInfoSerializer.data
+                'shortInfo': shortInfoSerializer.data,
+                'someWorks': projectSerializer.data
                 }
 
         return Response(toReturn)

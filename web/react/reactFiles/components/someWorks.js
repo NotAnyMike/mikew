@@ -5,6 +5,12 @@ const React = require('react'),
 
 const SomeWorks = class SomeWorks extends React.Component {
 	render() {
+		var list = [];
+		if(Array.isArray(this.props.list)){
+			this.props.list.map(element => {list.push(
+				<SomeWorksSingleItem key={element.pk} title={element.title} body={element.small_sentence} />
+			)});
+		}
 		return (
 			<div className="someWorks">
 				<div className="titleContainer">
@@ -15,15 +21,7 @@ const SomeWorks = class SomeWorks extends React.Component {
 				<ul>
 					<div className="left"></div>
 					<div className="right"></div>
-					<SomeWorksSingleItem title="inteligencia artificial" body="sentiment analysis for some politician" />
-					<li>
-						<span className="title">nintendo</span>
-						<span className="body">Modification of the Nintendo classNameic</span>
-					</li>
-					<li>
-						<span className="title">Stock market</span>
-						<span className="body">Autonomous invester algorithm</span>
-					</li>
+					{list}
 				</ul>
 			</div>
 		)

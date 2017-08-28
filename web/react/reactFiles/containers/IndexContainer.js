@@ -13,12 +13,22 @@ class IndexContainer extends Component {
 
 	static calculateState() {
 		return {
-			index: WsStore.getState(),
+			index: WsStore.getState().index,
 		};
 	}
 
 	render() {
-		return <Index history={this.props.history} moto={this.state.moto} {...this.state.index} />;
+		var moto = {};
+		var shortInfo = "";
+		var someWorks = [];
+
+		if(this.state.index){
+			moto = this.state.index.moto;
+			shortInfo = this.state.index.shortInfo.text;
+			someWorks = this.state.index.someWorks;
+		}
+
+		return <Index history={this.props.history} moto={moto} shortInfo={shortInfo} someWorks={someWorks} />;
 	}
 }
 
