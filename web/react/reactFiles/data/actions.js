@@ -10,6 +10,13 @@ const Actions = {
 		});
 	},
 
+	getBlog(slug){
+		WsDispatcher.dispatch({
+			type: ActionTypes.GET_BLOG,
+			slug: slug
+		});
+	},
+
 	getIndex(){
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_INDEX,
@@ -23,12 +30,19 @@ const Actions = {
 		});
 	},
 
+	receiveBlog(blog){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_BLOG,
+			blog: blog,
+		});
+	},
+
 	receiveBlogs(blogs){
 		WsDispatcher.dispatch({
 			type: ActionTypes.RECEIVE_BLOGS,
 			blogs: blogs,
 		});
-	}
+	},
 };
 
 module.exports = Actions;

@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from .models import Moto, ShortInfo, Blog
-from .serializers import MotoSerializer, ShortInfoSerializer, BlogSerializer
+from .serializers import MotoSerializer, ShortInfoSerializer, BlogSerializer, CompleteBlogSerializer
 
 def index(req):
     index = render(req, 'index.html')
@@ -42,3 +42,11 @@ def blogs_json(req):
             }
 
         return Response(toReturn)
+
+@api_view(['GET'])
+def blog_json(req, slug):
+    if req.method == 'GET':
+        blog = Blog.objects.filter(slug=slug).order_by('-date')[0]
+        blogSerializer = CompleteBlogSerializer(blog, many=False)
+
+        return Response(blogSerializer.data)

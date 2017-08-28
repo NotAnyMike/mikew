@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import BlogDivContainer from './BlogDivContainer.js';
@@ -6,21 +7,25 @@ import Actions from '../data/actions.js';
 
 import WsStore from '../data/wsStore.js';
 
-class Blogs extends Component{
+class Blog extends Component{
 
 	componentWillMount() {
-		//Actions.getIndex()
+		Actions.getBlog(this.props.slug)
 	};
 
 	render() {
 		return (
-			<div className="bodyContainer">
+			<div className="bodyContainer blog">
 				<Header history={this.props.history} />
-				<BlogDivContainer/>
-				<Footer moto={this.props.moto}/>
+				<BlogDivContainer blog={this.props.blog}/>
+				<Footer/>
 			</div>
 		)
-	};
+	}; };
+
+Blog.propTypes = {
+	slug: PropTypes.string.isRequired,
+	blog: PropTypes.object.isRequired,
 };
 
-export default Blogs;
+export default Blog;

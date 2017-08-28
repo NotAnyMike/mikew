@@ -3,6 +3,8 @@ const ActionTypes = {
 	RECEIVE_INDEX: 'RECEIVE_INDEX',
 	GET_BLOGS: 'GET_BLOGS',
 	RECEIVE_BLOGS: 'RECEIVE_BLOGS',
+	GET_BLOG: 'GET_BLOG',
+	RECEIVE_BLOG: 'RECEIVE_BLOG',
 };
 
 module.exports = ActionTypes;

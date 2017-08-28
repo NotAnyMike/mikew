@@ -15,3 +15,8 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Blog
         fields = ('pk','title','slug','small_sentence','img_header','summary',)
+
+class CompleteBlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Blog
+        fields = ('pk','title','slug','small_sentence','img_header','summary','body',)

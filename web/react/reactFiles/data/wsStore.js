@@ -12,6 +12,7 @@ var _store = {
 	index: {},
 	blogs: {},
 	moto: {},
+	blog: {},
 }
 
 class WsStore extends ReduceStore {
@@ -30,7 +31,8 @@ class WsStore extends ReduceStore {
 				shortInfo: {text: "I’m Mike Woodcock, an Economist, student of matematics and empirical engineer. Currently working on Artificial Intelligence, Simulation and Distributed Applications.<br> </br>Always open to new an interesting projects."},
 			},
 			moto: {},
-			blogs: {},
+			blogs: [],
+			blog: {}
 		}
 	}
 
@@ -45,9 +47,16 @@ class WsStore extends ReduceStore {
 
 	getBlogs(){
 		Functions.fetchAdvanced('/api/blogs/').then((resp) => resp.json()).then((json) => {
-			_store.index = json;
-			//emit event with index
+			_store.blogs = json;
 			Actions.receiveBlogs(json);
+		});
+		return _store
+	}
+
+	getBlog(slug){
+		Functions.fetchAdvanced('/api/blog/' + slug + '/').then((resp) => resp.json()).then((json) => {
+			_store.blog = json;
+			Actions.receiveBlog(json);
 		});
 		return _store
 	}
@@ -70,6 +79,14 @@ class WsStore extends ReduceStore {
 			case ActionTypes.RECEIVE_BLOGS:
 				_store.blogs = action.blogs.blogs
 				_store.moto = action.blogs.moto
+				return _store;
+
+			case ActionTypes.GET_BLOG:
+				this.getBlog(action.slug)
+				return _store.blog
+
+			case ActionTypes.RECEIVE_BLOG:
+				_store.blog = action.blog
 				return _store;
 
 			default:

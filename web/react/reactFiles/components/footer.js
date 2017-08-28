@@ -5,13 +5,11 @@ import PropTypes from 'prop-types';
 
 class Footer extends React.Component {
 
-	static propTypes() {
-		moto: PropTypes.object.isRequired()
-	}
-
 	render() {
+
 		var motoText = this.props.moto ? this.props.moto.text : "loading...";
 		var motoAuthor = this.props.moto ? this.props.moto.author : "loading..."
+
 		return (
 			<footer>
 				<div className="moto">
@@ -31,4 +29,8 @@ class Footer extends React.Component {
 	}
 };
 
-module.exports = Footer;
+Footer.propTypes = {
+	moto: PropTypes.object,
+}
+
+export default Footer;
