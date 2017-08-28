@@ -5,7 +5,7 @@ import BlogProjectEntry from './BlogProjectEntry';
 class BlogsProjectsDivContainer extends Component {
 
 	render(){
-		var className = "mainContainer " + (this.props.isBlogs ? "blogsContainer" : "projectsContainer");
+		var className = "mainContainer blogsContainer";
 
 		var list = [];
 		if(this.props.list && Array.isArray(this.props.list)){

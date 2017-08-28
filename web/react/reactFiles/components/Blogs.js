@@ -24,7 +24,7 @@ class Blogs extends Component{
 	}
 
 	render() {
-		var className = "bodyContainer " + (this.props.isBlogs === true? " blogs" : " projects");
+		var className = "bodyContainer " + (this.props.isBlogs === true? "blogs" : "projects");
 		return (
 			<div className={className}>
 				<Header history={this.props.history} />
