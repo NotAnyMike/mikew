@@ -17,8 +17,8 @@ ReactDOM.render(
 		<BrowserRouter history={browserHistory}>
 			<div>
 				<Route exact path="/" component={IndexContainer} />
-				<Route exact path="/blogs/" isBlogs={true} component={BlogsContainer} />
-				<Route exact path="/projects/" isBlogs={false} component={BlogsContainer} />
+				<Route exact path="/blogs/" component={BlogsContainer} />
+				<Route exact path="/projects/" component={BlogsContainer} />
 				<Route exact path="/writings/" component={Writings} />	
 				<Route exact path="/blog/:slug/" component={BlogContainer} />
 				<Route exact path="/project/:slug/" component={Project} />
