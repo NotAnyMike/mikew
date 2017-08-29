@@ -26,9 +26,9 @@ SECRET_KEY = 'm1v$m88tdm5s#5hq&opkowb*1h^0@%q80%ho$1nv#jcrh9ur!3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-if DEBUG == True:
-    ALLOWED_HOSTS = ['192.168.0.7', 'localhost', '192.168.43.97']
+ALLOWED_HOSTS = ['mikew-178315.appspot.com']
+#if DEBUG == True:
+    #ALLOWED_HOSTS = ['192.168.0.7', 'localhost', '192.168.43.97']
 
 
 # Application definition
@@ -78,11 +78,33 @@ WSGI_APPLICATION = 'mikew.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
+#DATABASES = {
+#	'default': {
+#		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#		'NAME' : 'dssupmqlcn1bs',
+#		'HOST' : 'ec2-23-21-184-113.compute-1.amazonaws.com',
+#		'USER' : 'okneqkpydpbzmd',
+#		'PASSWORD' : '81a1a8711e3606f5873d87f2f7ad93ee584421e1ac9a4e94db55cbffd2f67c7c',
+#		'PORT': '5432',
+#	}
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',
+		'NAME' : 'heroku_abea5b651bfcd51',
+		'HOST' : 'us-cdbr-iron-east-05.cleardb.net',
+		'USER' : 'bdebacf9d08d3a',
+		'PASSWORD' : '6205e1d3',
+		'PORT': '3306',
+	}
 }
 
 

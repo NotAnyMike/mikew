@@ -592,7 +592,7 @@ header .identifierContainer .identifier {
   align-items: center;
 }
 header .identifierContainer .identifier .isotype {
-  background-image: url("/img/isotipo.png");
+  background-image: url("/static/img/isotipo.png");
   width: 31px;
   height: 36px;
   -webkit-background-size: contain;
@@ -603,7 +603,7 @@ header .identifierContainer .identifier .isotype {
 header .identifierContainer .identifier .logo {
   width: 86px;
   height: 15px;
-  background-image: url("/img/mikew.png");
+  background-image: url("/static/img/mikew.png");
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;

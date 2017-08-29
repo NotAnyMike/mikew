@@ -14,10 +14,12 @@ def index(req):
 @api_view(['GET'])
 def index_json(req):
     if req.method == "GET" :
-        moto = Moto.objects.order_by('-date')[0]
+        moto = Moto.objects.order_by('-date')
+        if len(moto) > 0: moto = moto[0]
         motoSerializer = MotoSerializer(moto, many=False)
 
-        shortInfo = ShortInfo.objects.order_by('-date')[0]
+        shortInfo = ShortInfo.objects.order_by('-date')
+        if len(shortInfo) > 0 : shortInfo = shortInfo[0]
         shortInfoSerializer = ShortInfoSerializer(shortInfo, many=False)
         
         projects = Project.objects.filter(visible=True).order_by('-date')[:5]
