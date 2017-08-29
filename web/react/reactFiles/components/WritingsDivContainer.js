@@ -13,8 +13,9 @@ class WritingsDivContainer extends Component{
 					title={element.title} 
 					small_sentence={element.small_sentence} 
 					slug={element.slug}
+					goToEntryFn={this.props.goToEntryFn}
 				/>
-			)});
+			)}, this);
 		}
 		return(
 			<div className="mainContainer writingsContainer">
@@ -29,6 +30,7 @@ class WritingsDivContainer extends Component{
 
 WritingsDivContainer.propTypes = {
 	list: PropTypes.array,
+	goToEntryFn: PropTypes.func,
 }
 
 export default WritingsDivContainer;

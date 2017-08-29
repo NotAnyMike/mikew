@@ -23,9 +23,11 @@ class IndexContainer extends Component {
 		var someWorks = [];
 
 		if(this.state.index){
-			moto = this.state.index.moto;
-			shortInfo = this.state.index.shortInfo.text;
-			someWorks = this.state.index.someWorks;
+			if(!(Object.keys(this.state.index).length === 0 && this.state.index.constructor === Object)){
+				moto = this.state.index.moto;
+				shortInfo = this.state.index.shortInfo.text;
+				someWorks = this.state.index.someWorks;
+			}
 		}
 
 		return <Index history={this.props.history} moto={moto} shortInfo={shortInfo} someWorks={someWorks} />;

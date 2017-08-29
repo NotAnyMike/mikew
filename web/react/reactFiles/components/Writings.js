@@ -9,16 +9,28 @@ import WsStore from '../data/wsStore.js';
 
 class Writings extends Component{
 
+	constructor(props){
+		super(props);
+
+		this.goToEntry = this.goToEntry.bind(this)
+	}
+
 	componentWillMount() {
-		Actions.getWritings()
+		Actions.getWritings();
 	};
+
+	goToEntry(slug) {
+		var path = "/writing/" + slug + "/"
+		this.props.history.push(path);
+	}
+
 
 	render() {
 		var className = "bodyContainer writings";
 		return (
 			<div className={className}>
 				<Header history={this.props.history} />
-				<WritingsDivContainer list={this.props.list}/>
+				<WritingsDivContainer list={this.props.list} goToEntryFn={this.goToEntry}/>
 				<Footer moto={this.props.moto}/>
 			</div>
 		)

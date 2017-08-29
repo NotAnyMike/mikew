@@ -11,7 +11,7 @@ import BlogContainer from './containers/BlogContainer';
 import ProjectsContainer from './containers/ProjectsContainer';
 import ProjectContainer from './containers/ProjectContainer';
 import WritingsContainer from './containers/WritingsContainer';
-import Writing from './components/Writing';
+import WritingContainer from './containers/WritingContainer';
 
 ReactDOM.render(
 	(
@@ -23,7 +23,7 @@ ReactDOM.render(
 				<Route exact path="/writings/" component={WritingsContainer} />	
 				<Route exact path="/blog/:slug/" component={BlogContainer} />
 				<Route exact path="/project/:slug/" component={ProjectContainer} />
-				<Route exact path="/writing/:slug/" component={Writing} />	
+				<Route exact path="/writing/:slug/" component={WritingContainer} />	
 			</div>
 		</BrowserRouter>
 	),document.getElementById('mainContainer')

@@ -18,7 +18,6 @@ class ProjectContainer extends Component {
 	}
 
 	render() {
-		debugger
 		return <Project history={this.props.history} project={this.state.project} slug={this.props.match.params.slug}/>;
 	}
 }

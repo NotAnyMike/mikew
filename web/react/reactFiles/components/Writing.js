@@ -9,24 +9,34 @@ import WsStore from '../data/wsStore.js';
 
 class Writing extends Component{
 
-	static propTypes(){
-		//blogs: PropTypes.bool.isRequired
-	}
-
 	componentWillMount() {
-		//Actions.getIndex()
+		Actions.getWriting(this.props.slug)
 	};
 
 	render() {
-		var className = "bodyContainer " + (this.props.blogs === true? " blogs" : " projects");
+		var className = "bodyContainer writing";
+		
+		var title = "";
+		var body = "";
+
+		if(this.props.writing){	
+			if(!(Object.keys(this.props.writing).length === 0 && this.props.writing.constructor === Object)){
+				title = this.props.writing.title;
+				body = this.props.writing.body;
+			}
+		}
 		return (
 			<div className={className}>
 				<Header history={this.props.history} />
-				<WritingDivContainer />
+				<WritingDivContainer title={title} body={body}/>
 				<Footer moto={this.props.moto}/>
 			</div>
 		)
 	};
 };
+
+Writing.propTypes = {
+	writing: PropTypes.object,
+}
 
 export default Writing;

@@ -46,4 +46,4 @@ class WritingSerializer(serializers.ModelSerializer):
 class CompleteWritingSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Writing
-        fields = ('pk','title','slug','small_sentence','summary','body',)
+        fields = ('pk','title','slug','small_sentence','body',)
