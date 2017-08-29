@@ -1,4 +1,4 @@
 node_modules/**
 **/*.swp
 **/*.pyc
-lib/**
+web/django/mikew/lib/**
