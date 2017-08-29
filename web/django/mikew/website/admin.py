@@ -17,6 +17,10 @@ class BlogAdmin(admin.ModelAdmin):
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('pk', 'title', 'date')
 
+@admin.register(models.Writing)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title', 'date')
+
 @admin.register(models.Tech)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('pk', 'title')

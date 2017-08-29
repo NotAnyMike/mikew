@@ -14,6 +14,8 @@ var _store = {
 	blog: {},
 	projects: {},
 	project: {},
+	writings: {},
+	writing: {},
 	moto: {},
 }
 
@@ -35,8 +37,10 @@ class WsStore extends ReduceStore {
 			moto: {},
 			blogs: [],
 			blog: {},
-			projects: {},
+			projects: [],
 			project: {},
+			writings: [],
+			writing: {},
 		}
 	}
 
@@ -66,7 +70,6 @@ class WsStore extends ReduceStore {
 	}
 
 	getProjects(){
-		debugger
 		Functions.fetchAdvanced('/api/projects/').then((resp) => resp.json()).then((json) => {
 			_store.projects = json;
 			Actions.receiveProjects(json);
@@ -78,6 +81,22 @@ class WsStore extends ReduceStore {
 		Functions.fetchAdvanced('/api/project/' + slug + '/').then((resp) => resp.json()).then((json) => {
 			_store.project = json;
 			Actions.receiveProject(json);
+		});
+		return _store
+	}
+
+	getWritings(){
+		Functions.fetchAdvanced('/api/writings/').then((resp) => resp.json()).then((json) => {
+			_store.writings = json;
+			Actions.receiveWritings(json);
+		});
+		return _store
+	}
+
+	getWriting(slug){
+		Functions.fetchAdvanced('/api/writing/' + slug + '/').then((resp) => resp.json()).then((json) => {
+			_store.writing = json;
+			Actions.receiveWriting(json);
 		});
 		return _store
 	}
@@ -125,6 +144,23 @@ class WsStore extends ReduceStore {
 
 			case ActionTypes.RECEIVE_PROJECT:
 				_store.project = action.project
+				return _store;
+
+			case ActionTypes.GET_WRITINGS:
+				this.getWritings()
+				return _store.writings
+
+			case ActionTypes.RECEIVE_WRITINGS:
+				_store.writings = action.writings.writings
+				_store.moto = action.writings.moto
+				return _store;
+
+			case ActionTypes.GET_WRITING:
+				this.getWriting(action.slug)
+				return _store.writing
+
+			case ActionTypes.RECEIVE_WRITING:
+				_store.writing = action.writing
 				return _store;
 
 			default:

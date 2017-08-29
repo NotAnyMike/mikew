@@ -18,7 +18,6 @@ class Writing extends Component{
 	};
 
 	render() {
-		debugger
 		var className = "bodyContainer " + (this.props.blogs === true? " blogs" : " projects");
 		return (
 			<div className={className}>

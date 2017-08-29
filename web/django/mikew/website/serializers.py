@@ -16,11 +16,6 @@ class BlogSerializer(serializers.ModelSerializer):
         model = models.Blog
         fields = ('pk','title','slug','small_sentence','img_header','summary',)
 
-class ProjectSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Project
-        fields = ('pk','title','slug','small_sentence','img_header',)
-
 class CompleteBlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Blog
@@ -31,9 +26,24 @@ class TechnologySerializer(serializers.ModelSerializer):
         model = models.Tech
         fields = ('title','img',)
 
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Project
+        fields = ('pk','title','slug','small_sentence','img_header',)
+
 class CompleteProjectSerializer(serializers.ModelSerializer):
     technologies = TechnologySerializer(many=True, read_only=True)
 
     class Meta:
         model = models.Project
         fields = ('pk','title','slug','small_sentence','img_header','summary','body', 'technologies',)
+
+class WritingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Writing
+        fields = ('pk','title','slug','small_sentence',)
+
+class CompleteWritingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Writing
+        fields = ('pk','title','slug','small_sentence','summary','body',)

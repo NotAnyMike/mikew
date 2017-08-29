@@ -31,6 +31,33 @@ const Actions = {
 		});
 	},
 
+	getWriting(slug){
+		WsDispatcher.dispatch({
+			type: ActionTypes.GET_WRITING,
+			slug: slug
+		});
+	},
+
+	receiveWriting(writing){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_WRITING,
+			writing: writing,
+		});
+	},
+	
+	getWritings(){
+		WsDispatcher.dispatch({
+			type: ActionTypes.GET_WRITINGS,
+		});
+	},
+
+	receiveWritings(writings){
+		WsDispatcher.dispatch({
+			type: ActionTypes.RECEIVE_WRITINGS,
+			writings: writings,
+		});
+	},
+
 	getBlog(slug){
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_BLOG,

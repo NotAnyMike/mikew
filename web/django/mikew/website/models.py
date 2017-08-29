@@ -19,6 +19,14 @@ class Blog(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     visible = models.BooleanField(default=True)
 
+class Writing(models.Model):
+    slug = models.SlugField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
+    small_sentence = models.CharField(max_length=100, default=None, null=True, blank=True)
+    body= models.TextField()
+    date = models.DateTimeField(auto_now_add = True)
+    visible = models.BooleanField(default=True)
+
 class Project(models.Model):
     img_header = models.CharField(max_length=1000)
     slug = models.SlugField(max_length=100, unique=True)
