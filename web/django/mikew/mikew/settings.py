@@ -26,7 +26,7 @@ SECRET_KEY = 'm1v$m88tdm5s#5hq&opkowb*1h^0@%q80%ho$1nv#jcrh9ur!3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mikew-178315.appspot.com']
+ALLOWED_HOSTS = ['*']
 #if DEBUG == True:
     #ALLOWED_HOSTS = ['192.168.0.7', 'localhost', '192.168.43.97']
 
@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'mikew.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASE Config in case of using sqlite
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
@@ -85,6 +86,7 @@ WSGI_APPLICATION = 'mikew.wsgi.application'
 #    }
 #}
 
+# Database config in case of using a postgres db in heroku, the config is working in my heroku acoount
 #DATABASES = {
 #	'default': {
 #		'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -96,16 +98,48 @@ WSGI_APPLICATION = 'mikew.wsgi.application'
 #	}
 #}
 
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'NAME' : 'heroku_abea5b651bfcd51',
-		'HOST' : 'us-cdbr-iron-east-05.cleardb.net',
-		'USER' : 'bdebacf9d08d3a',
-		'PASSWORD' : '6205e1d3',
-		'PORT': '3306',
-	}
-}
+# Database config in case of useing a mysql runing by cleardb in heroku, working with my account
+#DATABASES = {
+	#'default': {
+		#'ENGINE': 'django.db.backends.mysql',
+		#'NAME' : 'heroku_abea5b651bfcd51',
+		##'HOST' : 'us-cdbr-iron-east-05.cleardb.net',
+                #'HOST': '107.20.141.193',
+		#'USER' : 'bdebacf9d08d3a',
+		#'PASSWORD' : '6205e1d3',
+	#}
+#}
+
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/mikew-178315:us-central1:mikew-mysql',
+            'NAME': 'mikew',
+            'USER': 'mikew-mysql-user',
+            'PASSWORD': 'z^cq?crVBdS8z6!D',
+        }
+    }
+else:
+    # Running locally so connect to either a local MySQL instance or connect to
+    # Cloud SQL via the proxy. To start the proxy via command line:
+    #
+    #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+    #
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '104.154.75.132',
+            'PORT': '3306',
+            'NAME': 'mikew',
+            'USER': 'mikew-mysql-user',
+            'PASSWORD': 'z^cq?crVBdS8z6!D',
+        }
+    }
+# [END db_setup]
 
 
 # Password validation
