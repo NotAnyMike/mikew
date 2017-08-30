@@ -4,7 +4,7 @@ This is the repo where I will be developing the new design of MikeW.io
 
 ## About DB
 
-* The app is connecting directly to google cloud SQL (even in localhost due to some error with permisions with the cloud_sql_proxy file)
+* The app is connecting directly to google cloud SQL (even in localhost if `DEBUG` is `False` due to some error with permisions with the cloud_sql_proxy file)
 
 ### DB tested
 1. SQLite: Google App Engine does not grant access to the system files
