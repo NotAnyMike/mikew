@@ -54,7 +54,17 @@ class Header extends React.Component {
 
 	render() {
 		var language = "Español";
-		if(this.props.lang === 'es') language = "English";
+
+		var projects = "projects";
+		var blog = "blog";
+		var writings = "writings";
+
+		if(this.props.lang === 'es') {
+			language = "English";
+			projects = "proyectos";
+			blog = "blog";
+			writings = "escritos";
+		}
 
 		return (	
 			<header>
@@ -69,9 +79,9 @@ class Header extends React.Component {
 					</div>
 				 </div>
 				 <ul>
-					<li onClick={this.onBlogClickHandler}>blog</li>
-					<li onClick={this.onProjectsClickHandler}>projects</li>
-					<li onClick={this.onWritingsClickHandler}>writings</li>
+					<li onClick={this.onBlogClickHandler}>{blog}</li>
+					<li onClick={this.onProjectsClickHandler}>{projects}</li>
+					<li onClick={this.onWritingsClickHandler}>{writings}</li>
 				 </ul>
 			</header>
 		)
