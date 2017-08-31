@@ -18,9 +18,10 @@ const Actions = {
 		});
 	},
 	
-	getProjects(){
+	getProjects(lang){
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_PROJECTS,
+			lang: lang,
 		});
 	},
 
@@ -45,9 +46,10 @@ const Actions = {
 		});
 	},
 	
-	getWritings(){
+	getWritings(lang){
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_WRITINGS,
+			lang: lang,
 		});
 	},
 
@@ -72,9 +74,10 @@ const Actions = {
 		});
 	},
 	
-	getBlogs(){
+	getBlogs(lang){
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_BLOGS,
+			lang: lang
 		});
 	},
 
@@ -85,9 +88,10 @@ const Actions = {
 		});
 	},
 
-	getIndex(){
+	getIndex(lang){
 		WsDispatcher.dispatch({
 			type: ActionTypes.GET_INDEX,
+			lang: lang,
 		});
 	},
 

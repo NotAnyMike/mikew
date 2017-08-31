@@ -16,11 +16,11 @@ class Writings extends Component{
 	}
 
 	componentWillMount() {
-		Actions.getWritings();
+		Actions.getWritings(this.props.lang);
 	};
 
 	goToEntry(slug) {
-		var path = "/writing/" + slug + "/"
+		var path = '/' + this.props.lang + "/writing/" + slug + "/"
 		this.props.history.push(path);
 	}
 
@@ -29,7 +29,7 @@ class Writings extends Component{
 		var className = "bodyContainer writings";
 		return (
 			<div className={className}>
-				<Header history={this.props.history} />
+				<Header history={this.props.history} lang={this.props.lang}/>
 				<WritingsDivContainer list={this.props.list} goToEntryFn={this.goToEntry}/>
 				<Footer moto={this.props.moto}/>
 			</div>

@@ -20,10 +20,13 @@ class WritingsContainer extends Component {
 	}
 
 	render() {
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
 		return <Writings
 				history={this.props.history} 
 				moto={this.state.moto} 
 				list={this.state.writings} 
+				lang={lang}
 			/>;
 	}
 }

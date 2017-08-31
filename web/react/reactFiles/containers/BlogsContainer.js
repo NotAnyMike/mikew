@@ -20,6 +20,8 @@ class BlogsContainer extends Component {
 	}
 
 	render() {
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
 		var isBlogs = true;
 
 		return <Blogs 
@@ -27,6 +29,7 @@ class BlogsContainer extends Component {
 				moto={this.state.moto} 
 				list={this.state.blogs} 
 				isBlogs={isBlogs} 
+				lang={lang}
 			/>;
 	}
 }

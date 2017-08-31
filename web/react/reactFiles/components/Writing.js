@@ -27,7 +27,7 @@ class Writing extends Component{
 		}
 		return (
 			<div className={className}>
-				<Header history={this.props.history} />
+				<Header history={this.props.history} lang={this.props.lang}/>
 				<WritingDivContainer title={title} body={body}/>
 				<Footer moto={this.props.moto}/>
 			</div>

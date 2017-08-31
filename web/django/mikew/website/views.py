@@ -12,17 +12,17 @@ def index(req):
     return index
 
 @api_view(['GET'])
-def index_json(req):
+def index_json(req,lang):
     if req.method == "GET" :
-        moto = Moto.objects.order_by('-date')
+        moto = Moto.objects.filter(lang=lang).order_by('-date')
         if len(moto) > 0: moto = moto[0]
         motoSerializer = MotoSerializer(moto, many=False)
 
-        shortInfo = ShortInfo.objects.order_by('-date')
+        shortInfo = ShortInfo.objects.filter(lang=lang).order_by('-date')
         if len(shortInfo) > 0 : shortInfo = shortInfo[0]
         shortInfoSerializer = ShortInfoSerializer(shortInfo, many=False)
         
-        projects = Project.objects.filter(visible=True).order_by('-date')[:5]
+        projects = Project.objects.filter(lang=lang, visible=True).order_by('-date')[:5]
         projectSerializer = ProjectSerializer(projects, many=True)
 
         toReturn = {
@@ -34,12 +34,12 @@ def index_json(req):
         return Response(toReturn)
         
 @api_view(['GET'])
-def blogs_json(req):
+def blogs_json(req, lang):
     if req.method == 'GET':
-        moto = Moto.objects.order_by('-date')[0]
+        moto = Moto.objects.filter(lang=lang).order_by('-date')[0]
         motoSerializer = MotoSerializer(moto, many=False)
 
-        blogs = Blog.objects.filter(visible=True).order_by('-date')
+        blogs = Blog.objects.filter(lang=lang, visible=True).order_by('-date')
         blogSerializer = BlogSerializer(blogs, many=True)
 
         toReturn = {
@@ -58,12 +58,12 @@ def blog_json(req, slug):
         return Response(blogSerializer.data)
         
 @api_view(['GET'])
-def projects_json(req):
+def projects_json(req, lang):
     if req.method == 'GET':
-        moto = Moto.objects.order_by('-date')[0]
+        moto = Moto.objects.filter(lang=lang).order_by('-date')[0]
         motoSerializer = MotoSerializer(moto, many=False)
 
-        projects = Project.objects.filter(visible=True).order_by('-date')
+        projects = Project.objects.filter(lang=lang, visible=True).order_by('-date')
         projectSerializer = ProjectSerializer(projects, many=True)
 
         toReturn = {
@@ -82,12 +82,12 @@ def project_json(req, slug):
         return Response(projectSerializer.data)
         
 @api_view(['GET'])
-def writings_json(req):
+def writings_json(req, lang):
     if req.method == 'GET':
-        moto = Moto.objects.order_by('-date')[0]
+        moto = Moto.objects.filter(lang=lang).order_by('-date')[0]
         motoSerializer = MotoSerializer(moto, many=False)
 
-        writings = Writing.objects.filter(visible=True).order_by('-date')
+        writings = Writing.objects.filter(lang=lang,visible=True).order_by('-date')
         writingSerializer = WritingSerializer(writings, many=True)
 
         toReturn = {

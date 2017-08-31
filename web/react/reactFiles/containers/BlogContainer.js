@@ -18,7 +18,9 @@ class BlogContainer extends Component {
 	}
 
 	render() {
-		return <Blog history={this.props.history} blog={this.state.blog} slug={this.props.match.params.slug}/>;
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
+		return <Blog lang={lang} history={this.props.history} blog={this.state.blog} slug={this.props.match.params.slug}/>;
 	}
 }
 

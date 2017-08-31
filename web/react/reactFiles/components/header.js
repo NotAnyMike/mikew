@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import Router, {browserHistory, Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Router, {browserHistory, Link} from 'react-router-dom';
 
 class Header extends React.Component {
 
@@ -12,6 +12,7 @@ class Header extends React.Component {
 		this.onProjectsClickHandler = this.onProjectsClickHandler.bind(this);
 		this.onWritingsClickHandler = this.onWritingsClickHandler.bind(this);
 		this.onIdentifierClickHandler = this.onIdentifierClickHandler.bind(this);
+		this.onLanguageClickHandler = this.onLanguageClickHandler.bind(this);
 	}
 
 	static propTypes(){
@@ -19,22 +20,42 @@ class Header extends React.Component {
 	}
 
 	onBlogClickHandler() {
-		this.props.history.push('/blogs/');
+		this.props.history.push('/' + this.props.lang + '/blogs/');
 	}
 
 	onProjectsClickHandler(){
-		this.props.history.push('/projects/');
+		this.props.history.push('/' + this.props.lang + '/projects/');
 	}
 
 	onWritingsClickHandler(){
-		this.props.history.push('/writings/');
+		this.props.history.push('/' + this.props.lang + '/writings/');
 	}
 
 	onIdentifierClickHandler(){
-		this.props.history.push('/');
+		this.props.history.push('/' + this.props.lang + '/');
+	}
+
+	onLanguageClickHandler(){
+		//if pathname == / go to spansih
+		//if writing, blog or project got to writings, blogs or projects
+		var path = "";
+		var newLanguage = (this.props.lang === 'es' ? 'en' : 'es');
+		if(location.pathname === '/' || location.pathname === '') path = '/es/';
+		else if(location.pathname.match('^\/((es)|(en))\/((project)|(writing)|(blog))\/')){
+			if(location.pathname.match('^\/((es)|(en))\/project\/')) path = '/' + newLanguage + '/projects/';
+			else if(location.pathname.match('^\/((es)|(en))\/blog\/')) path = '/' + newLanguage + '/blogs/';
+			else path = '/' + newLanguage + '/writings/';
+		}else{
+			console.log(location.pathname.replace(/^\/((es)|(en))\//, '/' + newLanguage + '/'));
+			path = location.pathname.replace(/^\/((es)|(en))\//, '/' + newLanguage + '/');
+		}
+		this.props.history.push(path);
 	}
 
 	render() {
+		var language = "Español";
+		if(this.props.lang === 'es') language = "English";
+
 		return (	
 			<header>
 				 <div className="identifierContainer">
@@ -44,7 +65,7 @@ class Header extends React.Component {
 					</div>
 					<div className="options">
 						<span className="cv">c.v.</span>
-						<span className="language">Español</span>
+						<span className="language" onClick={this.onLanguageClickHandler}>{language}</span>
 					</div>
 				 </div>
 				 <ul>
@@ -56,5 +77,9 @@ class Header extends React.Component {
 		)
 	}
 };
+
+Header.propTypes = {
+	lang: PropTypes.string.isRequired,
+}
 
 export default Header;

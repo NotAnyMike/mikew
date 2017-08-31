@@ -18,7 +18,9 @@ class WritingContainer extends Component {
 	}
 
 	render() {
-		return <Writing history={this.props.history} writing={this.state.writing} slug={this.props.match.params.slug}/>;
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
+		return <Writing lang={lang} history={this.props.history} writing={this.state.writing} slug={this.props.match.params.slug}/>;
 	}
 }
 

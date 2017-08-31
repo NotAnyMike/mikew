@@ -16,7 +16,7 @@ class Blog extends Component{
 	render() {
 		return (
 			<div className="bodyContainer blog">
-				<Header history={this.props.history} />
+				<Header history={this.props.history} lang={this.props.lang}/>
 				<BlogDivContainer blog={this.props.blog}/>
 				<Footer/>
 			</div>

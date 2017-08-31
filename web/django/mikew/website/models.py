@@ -3,11 +3,13 @@ from django.db import models
 class ShortInfo(models.Model):
     text = models.CharField(max_length=1000)
     date = models.DateTimeField(auto_now_add = True)
+    lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
 
 class Moto(models.Model):
     text = models.CharField(max_length=1000)
     author = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add = True)
+    lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
 
 class Blog(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
@@ -18,6 +20,7 @@ class Blog(models.Model):
     body= models.TextField()
     date = models.DateTimeField(auto_now_add = True)
     visible = models.BooleanField(default=True)
+    lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
 
 class Writing(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
@@ -26,6 +29,7 @@ class Writing(models.Model):
     body= models.TextField()
     date = models.DateTimeField(auto_now_add = True)
     visible = models.BooleanField(default=True)
+    lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
 
 class Project(models.Model):
     img_header = models.CharField(max_length=1000)
@@ -37,6 +41,7 @@ class Project(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     visible = models.BooleanField(default=True)
     technologies = models.ManyToManyField('Tech')
+    lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
 
 class Tech(models.Model):
     title = models.CharField(max_length=100)

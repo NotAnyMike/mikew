@@ -11,13 +11,16 @@ class IndexContainer extends Component {
 		];
 	}
 
-	static calculateState() {
+	static calculateState(props) {
+		var lang = location.pathname.match('^\/es\/') ? 'es' : 'en';
 		return {
-			index: WsStore.getState().index,
+			index: WsStore.getState(lang).index,
 		};
 	}
 
 	render() {
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
 		var moto = {};
 		var shortInfo = "";
 		var someWorks = [];
@@ -30,7 +33,7 @@ class IndexContainer extends Component {
 			}
 		}
 
-		return <Index history={this.props.history} moto={moto} shortInfo={shortInfo} someWorks={someWorks} />;
+		return <Index lang={lang} history={this.props.history} moto={moto} shortInfo={shortInfo} someWorks={someWorks} />;
 	}
 }
 

@@ -15,20 +15,20 @@ class Blogs extends Component{
 	}
 
 	componentWillMount() {
-		if(this.props.isBlogs === true) Actions.getBlogs();
-		else Actions.getProjects();
+		if(this.props.isBlogs === true) Actions.getBlogs(this.props.lang);
+		else Actions.getProjects(this.props.lang);
 	};
 
 	goToEntry(slug) {
 		var path = (this.props.isBlogs ? "/blog/" : "/project/") + slug + "/"
-		this.props.history.push(path);
+		this.props.history.push('/' + this.props.lang + path);
 	}
 
 	render() {
 		var className = "bodyContainer " + (this.props.isBlogs === true? "blogs" : "projects");
 		return (
 			<div className={className}>
-				<Header history={this.props.history} />
+				<Header history={this.props.history} lang={this.props.lang}/>
 				<BlogsProjectsDivContainer list={this.props.list} isBlogs={this.props.isBlogs} goToEntryFn={this.goToEntry}/>
 				<Footer moto={this.props.moto}/>
 			</div>

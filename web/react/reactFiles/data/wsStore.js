@@ -44,8 +44,11 @@ class WsStore extends ReduceStore {
 		}
 	}
 
-	getIndex(){
-		Functions.fetchAdvanced('/api/index/').then((resp) => resp.json()).then((json) => {
+	getIndex(lang){
+		var path = "";
+		if(lang==='es') path = '/api/es/index/';
+		else path = '/api/en/index/';
+		Functions.fetchAdvanced(path).then((resp) => resp.json()).then((json) => {
 			_store.index = json;
 			//emit event with index
 			Actions.receiveIndex(json);
@@ -53,8 +56,11 @@ class WsStore extends ReduceStore {
 		return _store
 	}
 
-	getBlogs(){
-		Functions.fetchAdvanced('/api/blogs/').then((resp) => resp.json()).then((json) => {
+	getBlogs(lang){
+		var path = "";
+		if(lang==='es') path = '/api/es/blogs/';
+		else path = '/api/en/blogs/';
+		Functions.fetchAdvanced(path).then((resp) => resp.json()).then((json) => {
 			_store.blogs = json;
 			Actions.receiveBlogs(json);
 		});
@@ -69,8 +75,11 @@ class WsStore extends ReduceStore {
 		return _store
 	}
 
-	getProjects(){
-		Functions.fetchAdvanced('/api/projects/').then((resp) => resp.json()).then((json) => {
+	getProjects(lang){
+		var path = "";
+		if(lang==='es') path = '/api/es/projects/';
+		else path = '/api/en/projects/';
+		Functions.fetchAdvanced(path).then((resp) => resp.json()).then((json) => {
 			_store.projects = json;
 			Actions.receiveProjects(json);
 		});
@@ -85,8 +94,11 @@ class WsStore extends ReduceStore {
 		return _store
 	}
 
-	getWritings(){
-		Functions.fetchAdvanced('/api/writings/').then((resp) => resp.json()).then((json) => {
+	getWritings(lang){
+		var path = "";
+		if(lang==='es') path = '/api/es/writings/';
+		else path = '/api/en/writings/';
+		Functions.fetchAdvanced(path).then((resp) => resp.json()).then((json) => {
 			_store.writings = json;
 			Actions.receiveWritings(json);
 		});
@@ -104,7 +116,7 @@ class WsStore extends ReduceStore {
 	reduce(state, action){
 		switch(action.type){
 			case ActionTypes.GET_INDEX:
-				this.getIndex()
+				this.getIndex(action.lang)
 				return _store.index
 
 			case ActionTypes.RECEIVE_INDEX:
@@ -113,7 +125,7 @@ class WsStore extends ReduceStore {
 				return _store;
 
 			case ActionTypes.GET_BLOGS:
-				this.getBlogs()
+				this.getBlogs(action.lang)
 				return _store.blogs
 
 			case ActionTypes.RECEIVE_BLOGS:
@@ -130,7 +142,7 @@ class WsStore extends ReduceStore {
 				return _store;
 
 			case ActionTypes.GET_PROJECTS:
-				this.getProjects()
+				this.getProjects(action.lang)
 				return _store.projects
 
 			case ActionTypes.RECEIVE_PROJECTS:
@@ -147,7 +159,7 @@ class WsStore extends ReduceStore {
 				return _store;
 
 			case ActionTypes.GET_WRITINGS:
-				this.getWritings()
+				this.getWritings(action.lang)
 				return _store.writings
 
 			case ActionTypes.RECEIVE_WRITINGS:

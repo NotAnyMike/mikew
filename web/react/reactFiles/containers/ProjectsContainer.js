@@ -20,13 +20,17 @@ class ProjectsContainer extends Component {
 	}
 
 	render() {
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
 		var isBlogs = false;
 
 		return <Blogs 
 			history={this.props.history} 
 			moto={this.state.moto} 
 			list={this.state.projects} 
-			isBlogs={isBlogs} />;
+			isBlogs={isBlogs} 
+			lang={lang}
+			/>;
 	}
 }
 

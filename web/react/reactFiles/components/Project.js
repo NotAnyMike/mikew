@@ -17,7 +17,7 @@ class Project extends Component{
 		var className = "bodyContainer project";
 		return (
 			<div className={className}>
-				<Header history={this.props.history} />
+				<Header history={this.props.history} lang={this.props.lang}/>
 				<ProjectDivContainer project={this.props.project}/>
 				<Footer moto={this.props.moto}/>
 			</div>

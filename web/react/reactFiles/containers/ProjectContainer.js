@@ -18,7 +18,9 @@ class ProjectContainer extends Component {
 	}
 
 	render() {
-		return <Project history={this.props.history} project={this.state.project} slug={this.props.match.params.slug}/>;
+		var lang = this.props.location.pathname.match('^\/es\/') ? 'es' : 'en';
+
+		return <Project lang={lang} history={this.props.history} project={this.state.project} slug={this.props.match.params.slug}/>;
 	}
 }
 
