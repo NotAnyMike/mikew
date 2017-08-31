@@ -2,6 +2,10 @@
 
 This is the repo where I will be developing the new design of MikeW.io
 
+## Useful commands
+
+* Make sure you are logged in into the correct account with `gcloud config configurations activate <name>`, to know which configs are use `gcloud config configurations list`
+
 ## About DB
 
 * The app is connecting directly to google cloud SQL (even in localhost if `DEBUG` is `False` due to some error with permisions with the cloud_sql_proxy file)
