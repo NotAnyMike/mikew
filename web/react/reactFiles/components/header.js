@@ -13,10 +13,16 @@ class Header extends React.Component {
 		this.onWritingsClickHandler = this.onWritingsClickHandler.bind(this);
 		this.onIdentifierClickHandler = this.onIdentifierClickHandler.bind(this);
 		this.onLanguageClickHandler = this.onLanguageClickHandler.bind(this);
+		this.onCvClickHandler = this.onCvClickHandler.bind(this);
 	}
 
 	static propTypes(){
 		history: PropTypes.object.isRequired
+	}
+
+	onCvClickHandler() {
+		console.log('2');
+		window.open('/static/cv/cv_' + this.props.lang + '.pdf', '_blank');
 	}
 
 	onBlogClickHandler() {
@@ -74,7 +80,7 @@ class Header extends React.Component {
 						<div className="logo"></div>
 					</div>
 					<div className="options">
-						<span className="cv">c.v.</span>
+						<span className="cv" onClick={this.onCvClickHandler}>c.v.</span>
 						<span className="language" onClick={this.onLanguageClickHandler}>{language}</span>
 					</div>
 				 </div>

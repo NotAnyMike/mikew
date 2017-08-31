@@ -12,13 +12,14 @@ class IndexDivContainer extends React.Component {
 		return (
 			<div className="mainContainer indexContainer">
 				<IndexMainInfo body={this.props.shortInfo}/>
-				<SomeWorks list={this.props.someWorks}/>
+				<SomeWorks list={this.props.someWorks} goToWorkFn={this.props.goToWorkFn}/>
 			</div>
 		)
 	}
 };
 
 IndexDivContainer.propTypes = {
+	goToWorkFn: PropTypes.func.isRequired,
 	someWorks: PropTypes.array,
 	shortInfo: PropTypes.string,
 };

@@ -3,13 +3,21 @@
 const React = require('react'),
 			SomeWorksSingleItem = require('./someWorksSingleItem.js');
 
+import PropTypes from 'prop-types';
+
 const SomeWorks = class SomeWorks extends React.Component {
 	render() {
 		var list = [];
 		if(Array.isArray(this.props.list)){
 			this.props.list.map(element => {list.push(
-				<SomeWorksSingleItem key={element.pk} title={element.title} body={element.small_sentence} />
-			)});
+				<SomeWorksSingleItem 
+					key={element.pk} 
+					title={element.title} 
+					body={element.small_sentence} 
+					slug={element.slug}
+					goToWorkFn={this.props.goToWorkFn}
+				/>
+			)}, this);
 		}
 		return (
 			<div className="someWorks">
@@ -27,5 +35,9 @@ const SomeWorks = class SomeWorks extends React.Component {
 		)
 	}
 };
+
+SomeWorks.propTypes = {
+	goToWorkFn: PropTypes.func.isRequired,
+}
 
 module.exports = SomeWorks;

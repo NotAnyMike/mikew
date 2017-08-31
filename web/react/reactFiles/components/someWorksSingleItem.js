@@ -5,9 +5,18 @@ const PropTypes = require('prop-types');
 
 class SomeWorksSingleItem extends React.Component {
 	
+	constructor(props){
+		super(props)
+		this.goToWork = this.goToWork.bind(this);
+	}
+
+	goToWork(){
+		this.props.goToWorkFn(this.props.slug);
+	}
+
 	render() {
 		return (
-			<li>
+			<li onClick={this.goToWork}>
 				<span className="title">{this.props.title}</span>
 				<span className="body">Sentiment analysis for some politician</span>
 			</li>
@@ -18,6 +27,8 @@ class SomeWorksSingleItem extends React.Component {
 SomeWorksSingleItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	body: PropTypes.string.isRequired,
+	slug: PropTypes.string.isRequired,
+	goToWorkFn: PropTypes.func.isRequired,
 };
 
 module.exports = SomeWorksSingleItem;

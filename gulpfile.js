@@ -19,6 +19,13 @@ gulp.task('copy-fonts', function(){
 	.pipe(gulp.dest('./web/django/mikew/website/static/css/fonts/'));
 });
 
+gulp.task('copy-cv', function(){
+	gulp.src('./resources/cv/*')
+	.pipe(gulp.dest('./web/layout/cv/'))
+	.pipe(gulp.dest('./web/react/static/cv/'))
+	.pipe(gulp.dest('./web/django/mikew/website/static/cv/'));
+});
+
 gulp.task('copy-imgs', function(){
 	gulp.src('./resources/imgs/*')
 	.pipe(gulp.dest('./web/layout/img/'))
@@ -26,7 +33,7 @@ gulp.task('copy-imgs', function(){
 	.pipe(gulp.dest('./web/django/mikew/website/static/img/'));
 });
 
-gulp.task('copy-files', ['copy-imgs','copy-fonts']);
+gulp.task('copy-files', ['copy-imgs','copy-fonts','copy-cv']);
 
 gulp.task('stylus-dev', function(){
 	return gulp.src('./web/layout/stylus/main.styl')
