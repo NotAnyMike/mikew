@@ -22,7 +22,7 @@ def index_json(req,lang):
         if len(shortInfo) > 0 : shortInfo = shortInfo[0]
         shortInfoSerializer = ShortInfoSerializer(shortInfo, many=False)
         
-        projects = Project.objects.filter(lang=lang, visible=True).order_by('-date')[:5]
+        projects = Project.objects.filter(lang=lang, visible=True).order_by('-date')[:3]
         projectSerializer = ProjectSerializer(projects, many=True)
 
         toReturn = {
