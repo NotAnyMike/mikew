@@ -89,6 +89,7 @@ class Header extends React.Component {
 					<li onClick={this.onProjectsClickHandler}>{projects}</li>
 					<li onClick={this.onWritingsClickHandler}>{writings}</li>
 				 </ul>
+				 <div className="separator"></div>
 			</header>
 		)
 	}

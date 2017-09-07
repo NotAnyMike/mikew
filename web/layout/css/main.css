@@ -541,6 +541,9 @@ header {
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
+header .separator {
+  display: none;
+}
 header .identifierContainer {
   position: relative;
   display: -webkit-box;
@@ -1058,6 +1061,102 @@ footer .rights {
     -webkit-align-items: center;
     align-items: center;
   }
+  .bodyContainer.writing header,
+  .bodyContainer.project header,
+  .bodyContainer.blog header,
+  .bodyContainer.writings header,
+  .bodyContainer.projects header,
+  .bodyContainer.blogs header {
+    line-height: 0;
+  }
+  .bodyContainer.writing header .separator,
+  .bodyContainer.project header .separator,
+  .bodyContainer.blog header .separator,
+  .bodyContainer.writings header .separator,
+  .bodyContainer.projects header .separator,
+  .bodyContainer.blogs header .separator {
+    display: inline-block;
+    background: -webkit-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: -moz-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: -o-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: -ms-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: linear-gradient(90deg, #b84179, #8c245c, #551942, #192a35);
+    width: 100%;
+    height: 5px;
+  }
+  .bodyContainer.writing footer .separator,
+  .bodyContainer.project footer .separator,
+  .bodyContainer.blog footer .separator,
+  .bodyContainer.writings footer .separator,
+  .bodyContainer.projects footer .separator,
+  .bodyContainer.blogs footer .separator {
+    display: none;
+  }
+  .bodyContainer.writing footer .moto,
+  .bodyContainer.project footer .moto,
+  .bodyContainer.blog footer .moto,
+  .bodyContainer.writings footer .moto,
+  .bodyContainer.projects footer .moto,
+  .bodyContainer.blogs footer .moto {
+    display: none;
+  }
+  .bodyContainer.writing footer .contactInfoContainer,
+  .bodyContainer.project footer .contactInfoContainer,
+  .bodyContainer.blog footer .contactInfoContainer,
+  .bodyContainer.writings footer .contactInfoContainer,
+  .bodyContainer.projects footer .contactInfoContainer,
+  .bodyContainer.blogs footer .contactInfoContainer {
+    position: relative;
+  }
+  .bodyContainer.writing footer .contactInfoContainer:before,
+  .bodyContainer.project footer .contactInfoContainer:before,
+  .bodyContainer.blog footer .contactInfoContainer:before,
+  .bodyContainer.writings footer .contactInfoContainer:before,
+  .bodyContainer.projects footer .contactInfoContainer:before,
+  .bodyContainer.blogs footer .contactInfoContainer:before,
+  .bodyContainer.writing footer .contactInfoContainer:after,
+  .bodyContainer.project footer .contactInfoContainer:after,
+  .bodyContainer.blog footer .contactInfoContainer:after,
+  .bodyContainer.writings footer .contactInfoContainer:after,
+  .bodyContainer.projects footer .contactInfoContainer:after,
+  .bodyContainer.blogs footer .contactInfoContainer:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 37px;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    background-image: url("/static/img/complementary_graph_negative.png");
+    background-repeat: no-repeat;
+  }
+  .bodyContainer.writing footer .contactInfoContainer:before,
+  .bodyContainer.project footer .contactInfoContainer:before,
+  .bodyContainer.blog footer .contactInfoContainer:before,
+  .bodyContainer.writings footer .contactInfoContainer:before,
+  .bodyContainer.projects footer .contactInfoContainer:before,
+  .bodyContainer.blogs footer .contactInfoContainer:before {
+    left: 0;
+  }
+  .bodyContainer.writing footer .contactInfoContainer:after,
+  .bodyContainer.project footer .contactInfoContainer:after,
+  .bodyContainer.blog footer .contactInfoContainer:after,
+  .bodyContainer.writings footer .contactInfoContainer:after,
+  .bodyContainer.projects footer .contactInfoContainer:after,
+  .bodyContainer.blogs footer .contactInfoContainer:after {
+    right: 0;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  .bodyContainer.projects .mainContainer,
+  .bodyContainer.blogs .mainContainer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 0;
+  }
   header {
     max-width: 1200px;
   }
@@ -1251,6 +1350,9 @@ footer .rights {
   footer .contactInfoContainer span:hover:before,
   footer .contactInfoContainer span:hover:after {
     color: #fff;
+  }
+  footer .contactInfoContainer span:last-child {
+    border: 0;
   }
   footer .rights {
     background-color: #fff;
