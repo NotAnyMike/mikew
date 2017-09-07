@@ -24,6 +24,7 @@ class Footer extends React.Component {
 
 		return (
 			<footer>
+				<div className="separator"></div>
 				<div className="moto">
 					<div className="text">"{motoText}"</div>
 					<div className="by">- {motoAuthor}</div>
