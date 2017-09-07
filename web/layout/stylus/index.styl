@@ -462,6 +462,17 @@ footer
 				font-size: 24px
 				color: $dark_gray
 
+				&:before
+					content: ''
+					width: 100%
+					height: 49px
+					display: inline-block
+					margin-bottom: 20px
+					background-image: url("/static/img/isotipo.png")
+					background-size: contain
+					background-repeat: no-repeat
+					background-position: center center
+
 			.by
 				font-size: 24px
 				color: $soft_gray
@@ -488,3 +499,21 @@ footer
 
 		.contactInfoContainer
 			background-color: $gray
+			padding: 10px 0
+
+			span
+				width: 240px
+				border-right: 1px solid white
+
+				&:before, &:after
+					color: $darker_gray
+
+				&:hover
+					&:before, &:after
+						color: white
+
+		.rights
+			background-color: white
+			background: white
+			color: $gray
+			font-size: 12px

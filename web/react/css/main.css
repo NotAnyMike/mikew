@@ -1192,6 +1192,19 @@ footer .rights {
     font-size: 24px;
     color: #575756;
   }
+  footer .moto .text:before {
+    content: '';
+    width: 100%;
+    height: 49px;
+    display: inline-block;
+    margin-bottom: 20px;
+    background-image: url("/static/img/isotipo.png");
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
   footer .moto .by {
     font-size: 24px;
     color: #b2b2b1;
@@ -1225,6 +1238,25 @@ footer .rights {
   }
   footer .contactInfoContainer {
     background-color: #878786;
+    padding: 10px 0;
+  }
+  footer .contactInfoContainer span {
+    width: 240px;
+    border-right: 1px solid #fff;
+  }
+  footer .contactInfoContainer span:before,
+  footer .contactInfoContainer span:after {
+    color: #3c3c3b;
+  }
+  footer .contactInfoContainer span:hover:before,
+  footer .contactInfoContainer span:hover:after {
+    color: #fff;
+  }
+  footer .rights {
+    background-color: #fff;
+    background: #fff;
+    color: #878786;
+    font-size: 12px;
   }
 }
 .blogsContainer ul {
