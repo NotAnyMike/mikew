@@ -74,6 +74,7 @@ header
 			flex-direction: column
 			justify-content: space-between
 			align-items: center
+			cursor: pointer
 
 			.isotype
 				background-image: url('/static/img/isotipo.png')
@@ -345,3 +346,49 @@ footer
 		height: 31px
 		text-align: center
 		font-size: 9px
+
+@media only screen and (min-width: 601px)
+	header
+		.identifierContainer
+			height: 200px
+			align-items: center
+
+			.options
+				.language
+					font-size: 16px
+
+				.cv
+					font-size: 16px
+					height: 60px
+					width: 60px
+					line-height: 60px
+
+					&:before
+						width: 10px
+						height: 10px
+						border: 5px solid white
+						border-left-color $violet
+						border-bottom-color: $violet
+
+			.identifier
+				height: auto
+
+				.isotype
+					padding-bottom: 16px
+					width: 56px
+					height: 65px
+
+				.logo
+					width: 153px
+					height: 27px
+
+		ul
+			height: 72px
+			box-sizing: border-box
+			align-items: center
+
+			li
+				font-size: 18px
+				padding: auto 40px
+				box-sizing: content-box
+				color: $very_soft_gray
