@@ -15,8 +15,13 @@ class Project extends Component{
 
 	render() {
 		var className = "bodyContainer project";
+		var styles = "";
+		if(this.props.project){
+			styles = ".important {background-color: #" +  this.props.project.background_color + "!important; color: #" + this.props.project.color + " !important}"
+		}
 		return (
 			<div className={className}>
+				<style dangerouslySetInnerHTML={{__html: styles}}/>
 				<Header history={this.props.history} lang={this.props.lang}/>
 				<ProjectDivContainer project={this.props.project}/>
 				<Footer moto={this.props.moto}/>

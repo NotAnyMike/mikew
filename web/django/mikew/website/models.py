@@ -42,6 +42,8 @@ class Project(models.Model):
     visible = models.BooleanField(default=True)
     technologies = models.ManyToManyField('Tech')
     lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
+    color = models.CharField(max_length=6, default=None, null=True, blank=True)
+    background_color = models.CharField(max_length=6, default=None, null=True, blank=True)
 
 class Tech(models.Model):
     title = models.CharField(max_length=100)
