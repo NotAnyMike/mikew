@@ -36,7 +36,7 @@ class CompleteProjectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Project
-        fields = ('pk','title','slug','small_sentence','img_header','summary','body', 'technologies','color','background_color')
+        fields = ('pk','title','slug','small_sentence','img_header','summary','body', 'technologies','color','title_color','background_color')
 
 class WritingSerializer(serializers.ModelSerializer):
     class Meta:

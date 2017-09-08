@@ -17,7 +17,7 @@ class Project extends Component{
 		var className = "bodyContainer project";
 		var styles = "";
 		if(this.props.project){
-			styles = ".important {background-color: #" +  this.props.project.background_color + "!important; color: #" + this.props.project.color + " !important}"
+			styles = ".important {background-color: #" +  this.props.project.background_color + " !important; color: #" + this.props.project.color + " !important} .important > h2 {color: #" + this.props.project.title_color + " !important}"
 		}
 		return (
 			<div className={className}>

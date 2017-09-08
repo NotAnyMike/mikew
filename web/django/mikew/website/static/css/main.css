@@ -1711,13 +1711,13 @@ footer .rights {
 .writingContainer .content section {
   padding: 0px 0px 26px 0px;
 }
-.projectContainer .content section:nth-of-type(2n-1),
-.writingContainer .content section:nth-of-type(2n-1) {
+.projectContainer .content section.important,
+.writingContainer .content section.important {
   background-color: rgba(0,165,145,0.5);
   color: #005f53;
 }
-.projectContainer .content section:nth-of-type(2n-1) h2,
-.writingContainer .content section:nth-of-type(2n-1) h2 {
+.projectContainer .content section.important h2,
+.writingContainer .content section.important h2 {
   color: #005f53;
 }
 .writingContainer .title {

@@ -43,6 +43,7 @@ class Project(models.Model):
     technologies = models.ManyToManyField('Tech')
     lang = models.CharField(max_length=2, default="en", choices=(('en','english'),('es','spanish')))
     color = models.CharField(max_length=6, default=None, null=True, blank=True)
+    title_color = models.CharField(max_length=6, default=None, null=True, blank=True)
     background_color = models.CharField(max_length=6, default=None, null=True, blank=True)
 
 class Tech(models.Model):
