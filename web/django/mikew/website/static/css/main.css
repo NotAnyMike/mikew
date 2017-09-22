@@ -739,10 +739,42 @@ header ul li:hover {
 }
 .indexContainer .mainInfo figure {
   background-color: #808080;
+  position: relative;
   width: 100%;
   margin: 0px;
   padding: 0;
-  height: 336px;
+  height: 110.7vw;
+  background-image: url("/static/img/mike.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.indexContainer .mainInfo figure:before,
+.indexContainer .mainInfo figure:after {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  height: 102px;
+  top: 50%;
+  margin-top: -51px;
+  content: '';
+  background-image: url("/static/img/complementary_graph.png");
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.indexContainer .mainInfo figure:before {
+  left: 0;
+}
+.indexContainer .mainInfo figure:after {
+  right: 0;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 .indexContainer .mainInfo .separator {
   background: -webkit-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
@@ -1229,11 +1261,25 @@ footer .rights {
   }
   .indexContainer .mainInfo figure {
     background-color: #878786;
+    background-image: url("/static/img/mike2.png");
+    background-position: 18% 0%;
+    height: 433.4px;
+  }
+  .indexContainer .mainInfo figure:before,
+  .indexContainer .mainInfo figure:after {
+    display: none;
   }
   .indexContainer .mainInfo span {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 10%;
+    width: 50%;
+    height: 100%;
+    line-height: 433.4px;
+  }
+  .indexContainer .mainInfo span p {
+    line-height: 18.4px;
+    display: inline-block;
   }
   .indexContainer .mainInfo .separator {
     display: none;

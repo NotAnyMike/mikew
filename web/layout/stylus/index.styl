@@ -168,12 +168,37 @@ header
 
 .indexContainer
 	.mainInfo
+
 		figure
 			background-color: gray
+			position: relative
 			width: 100%
 			margin: 0px
 			padding: 0
-			height: 336px
+			height: 110.7vw
+			background-image: url("/static/img/mike.png")
+			background-repeat: no-repeat
+			background-size: cover
+
+			&:before, &:after
+				display: inline-block
+				position: absolute
+				width: 40px
+				height: 102px
+				top: 50%
+				margin-top: -51px
+				content: ''
+				background-image: url("/static/img/complementary_graph.png")
+				background-size: contain
+				background-repeat: no-repeat
+
+			&:before
+				left: 0
+
+			&:after
+				right: 0
+				transform: scaleX(-1)
+				
 
 		.separator
 			background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
@@ -458,11 +483,24 @@ footer
 
 			figure
 				background-color: $gray
+				background-image: url("/static/img/mike2.png")
+				background-position: 18% 0%
+				height: 433.4px
+
+				&:before, &:after
+					display: none
 
 			span
 				position: absolute
 				top: 0
-				left: 0
+				right: 10%
+				width: 50%
+				height: 100%
+				line-height: 433.4px
+
+				p
+					line-height: 18.4px
+					display: inline-block
 
 			.separator
 				display: none

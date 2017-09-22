@@ -10,7 +10,9 @@ const IndexMainInfo = class IndexMainInfo extends React.Component {
 			<div className="mainInfo">
 				<figure></figure>
 				<div className="separator"></div>
-				<span dangerouslySetInnerHTML={{__html: this.props.body}}></span>
+				<span>
+					<p dangerouslySetInnerHTML={{__html: this.props.body}}></p>
+				</span>
 			</div>
 		)
 	}
