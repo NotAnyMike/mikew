@@ -1,4 +1,9 @@
 .blogsContainer
+	/******************************* any change made inside 
+	 ******************************** this block copy to the file 
+	 ********************************* writings.styl, search for the text
+	 ********************************** code: 453023 
+	 **********************************************************************/
 	ul
 		list-style: none
 		padding: 0
@@ -10,7 +15,7 @@
 
 		li
 			flex-shrink: 1
-			border: 1px solid $gray
+			border: 1px solid $red_violet
 			max-width: 173px
 			width: 35%
 			display: flex
@@ -53,3 +58,12 @@
 
 					&:first-letter
 						color: $violet
+
+@media only screen and (min-width: 601px)
+	.blogsContainer
+		ul
+			justify-content: center
+
+			li
+				max-width: 220px
+	/************************ end of block ****************************/

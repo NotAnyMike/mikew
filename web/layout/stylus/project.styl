@@ -3,12 +3,29 @@
 		img
 			max-width: 105px
 			max-height: 50px
+
 	.summary
 		display: inline-block
+
 		p
-			text-align: justify
+			text-align: left
 	
 	.techs
+		position: relative 
+
+		&:after
+			content: '\e904'
+			font-family: mikew
+			font-size: 30px
+			color: $violet
+			position: absolute
+			right: 5px
+			top: 50%
+			margin-top: -20px
+			height: 40px
+			width: 20px
+			display: inline-block
+
 		.title
 			font-size: 14px
 			text-transform: capitalize
@@ -24,7 +41,7 @@
 			padding: 0
 			max-height: 250px
 			overflow-x: scroll
-			margin-right: 20px
+			margin-right: 40px
 
 			li
 				margin: 18px
@@ -41,7 +58,7 @@
 
 	.content
 		section
-			padding: 0px 0px 26px 0px
+			padding: 0px 0px 0px 0px
 
 			&.important
 				background-color: rgba(#00A591, 0.5)

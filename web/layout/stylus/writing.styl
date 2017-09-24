@@ -4,6 +4,15 @@
 
 	.content
 		section
+			&:first-child
+				p, h2
+					&:first-of-type
+						text-align: center
+
+				p:first-of-type
+					&:first-letter
+						color: $violet
+
 			&:nth-of-type(2n-1)
 				color: $gray
 				background-color: transparent

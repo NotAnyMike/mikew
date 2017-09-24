@@ -42,3 +42,115 @@
 
 			&:last-child
 				margin-bottom: 10px
+
+@media only screen and (min-width: 601px)
+	.writingsContainer
+		width: 100%
+		position: relative
+		/*max-width: 1200px*/
+			
+		/****************** copy from here ******************/
+		/* code: 453023 */
+		ul
+			list-style: none
+			padding: 0
+			display: flex
+			width: 100%
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: space-evenly
+
+			li
+				flex-shrink: 1
+				border: 1px solid $red_violet
+				max-width: 173px
+				width: 35%
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				padding: 14px
+				margin: 10px 5px
+				transition: border $time
+				cursor: pointer
+
+				figure
+					width: 100%
+					overflow: hidden
+					margin: 0
+					padding: 0 20px
+					box-sizing: border-box
+
+					img
+						width: 100%
+
+				span
+					padding: 15px 0 0
+					text-align: center
+					color: $soft_gray
+					text-decoration: underline
+					letter-spacing: 0.44px
+					transition: color $time
+
+					&:first-letter
+						color: $soft_gray
+						transition: $time color
+
+				&:hover
+					border-color: $violet
+					border-bottom: 8px solid $violet
+
+					span
+						color: $gray
+
+						&:first-letter
+							color: $violet
+
+		ul
+			justify-content: center
+
+			li
+				max-width: 220px
+			/****************** copy until here ******************/
+
+		&:after
+			content: ''
+			display: inline-block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			z-index: 1
+			background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+			opacity: .2
+
+
+		ul
+			position: relative
+			padding: 40px 0
+			max-width: $max_width
+			margin: 0 auto
+
+			li
+				z-index: 2
+				flex-shrink: 1
+				padding: 14px
+				transition: border $time
+				cursor: pointer
+				background-color: white
+
+				&:nth-child(2n), &:nth-child(2n-1)
+					background-color: white
+
+					span
+						&.title
+							color: $red_violet
+
+							&:first-letter
+								color: $red_violet
+						&.body
+							color: $gray
+
+					&:hover
+						background-color: white

@@ -425,9 +425,11 @@ footer
 				padding: 40px 0
 
 	header
-		max-width: $max_width
+		/*max-width: $max_width*/
 
 		.identifierContainer
+			max-width: $max_width
+			margin: 0 auto
 			height: 200px
 			align-items: center
 
@@ -496,11 +498,32 @@ footer
 				right: 10%
 				width: 50%
 				height: 100%
-				line-height: 433.4px
+				line-height: 393.4px
+				overflow: hidden
 
 				p
-					line-height: 18.4px
+					line-height: 40px
+					line-height: calc(3.32vw)
 					display: inline-block
+					font-size: 26px
+					font-size: calc(2.15vw)
+					font-style: italic
+					letter-spacing: .5
+					text-align: left
+					vertical-align: middle
+					padding-left: 60px
+					position: relative
+
+					&:after
+						content: ''
+						display: inline-block
+						position: absolute
+						width: 40px
+						height: 50px
+						background: url("/static/img/compl-full.png") no-repeat center center
+						left: 0
+						top: 20px
+						margin-top: -25px
 
 			.separator
 				display: none
@@ -528,7 +551,7 @@ footer
 
 	footer
 		width: 100%
-		max-width: $max_width
+		/*max-width: $max_width*/
 
 		.separator
 			display: inline-block
@@ -603,3 +626,8 @@ footer
 			background: white
 			color: $gray
 			font-size: 12px
+
+@media only screen and (min-width: 1201px)
+	.indexContainer .mainInfo span p
+		line-height: 40px
+		font-size: 26px
