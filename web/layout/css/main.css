@@ -1855,6 +1855,16 @@ footer .rights {
 .writingContainer .summary p:first-child:first-letter {
   color: #9e005d;
 }
+.blogContainer .content p img,
+.projectContainer .content p img,
+.writingContainer .content p img,
+.blogContainer .summary p img,
+.projectContainer .summary p img,
+.writingContainer .summary p img {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
 .blogContainer .content img,
 .projectContainer .content img,
 .writingContainer .content img,
@@ -1895,6 +1905,64 @@ footer .rights {
 .projectContainer .summary ul,
 .writingContainer .summary ul {
   margin: 10px 0 10px 0;
+}
+@media only screen and (min-width: 800px) {
+  .blogContainer .content,
+  .projectContainer .content,
+  .writingContainer .content,
+  .blogContainer .summary,
+  .projectContainer .summary,
+  .writingContainer .summary {
+    max-width: 1200px;
+    margin: 0 100px;
+    font-size: 15pt;
+  }
+  .blogContainer .content .title,
+  .projectContainer .content .title,
+  .writingContainer .content .title,
+  .blogContainer .summary .title,
+  .projectContainer .summary .title,
+  .writingContainer .summary .title {
+    font-size: 25px;
+    padding-bottom: 30px;
+  }
+  .blogContainer .content h2,
+  .projectContainer .content h2,
+  .writingContainer .content h2,
+  .blogContainer .summary h2,
+  .projectContainer .summary h2,
+  .writingContainer .summary h2 {
+    font-size: 15pt;
+  }
+  .blogContainer .content p,
+  .projectContainer .content p,
+  .writingContainer .content p,
+  .blogContainer .summary p,
+  .projectContainer .summary p,
+  .writingContainer .summary p {
+    line-height: 40px;
+  }
+  .blogContainer .content p img,
+  .projectContainer .content p img,
+  .writingContainer .content p img,
+  .blogContainer .summary p img,
+  .projectContainer .summary p img,
+  .writingContainer .summary p img {
+    max-width: 400px;
+    padding: 15px;
+    border: 1px #b2b2b1 solid;
+    float: left;
+    margin: 0px 15px 15px 0px;
+    display: inline-block;
+  }
+  .blogContainer .content img,
+  .projectContainer .content img,
+  .writingContainer .content img,
+  .blogContainer .summary img,
+  .projectContainer .summary img,
+  .writingContainer .summary img {
+    border: 1px #b2b2b1 solid;
+  }
 }
 .projectContainer .identifierEntry img,
 .writingContainer .identifierEntry img {
