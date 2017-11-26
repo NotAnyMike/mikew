@@ -67,3 +67,28 @@
 			li
 				max-width: 220px
 	/************************ end of block ****************************/
+
+@media only screen and (min-width: 601px)
+	.blogsContainer
+		ul
+			li
+				flex-direction: row
+				justify-content: space-between
+				max-width: initial
+				border: 0
+				width: 100%
+
+				figure
+					width: 400px
+					height: 250px
+					padding: 20px
+					border: 1px solid $red_violet
+					flex-shrink: 0
+
+				span
+					flex-grow: 1
+					text-align: left
+					padding-left: 90px
+					font-size: 25px
+					text-transform: uppercase
+					color: $gray

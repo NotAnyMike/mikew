@@ -1556,6 +1556,47 @@ footer .rights {
     max-width: 220px;
   }
 }
+@media only screen and (min-width: 601px) {
+  .blogsContainer ul li {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -o-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    max-width: initial;
+    border: 0;
+    width: 100%;
+  }
+  .blogsContainer ul li figure {
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+    border: 1px solid #a3195b;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+  }
+  .blogsContainer ul li span {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 90px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #878786;
+  }
+}
 .writingsContainer ul {
   list-style: none;
   margin: 0;
