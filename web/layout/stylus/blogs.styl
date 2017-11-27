@@ -44,10 +44,14 @@
 				text-decoration: underline
 				letter-spacing: 0.44px
 				transition: color $time
+				display: inline-block
 
 				&:first-letter
 					color: $soft_gray
 					transition: $time color
+
+				&.summaryBlogList
+					display: none
 
 			&:hover
 				border-color: $violet
@@ -74,26 +78,88 @@
 			li
 				flex-direction: row
 				justify-content: space-between
+				align-items: flex-start
 				max-width: initial
 				border: 0
 				width: 100%
 
 				figure
 					width: 400px
-					height: 250px
-					line-height: 250px
-					padding: 20px
+					width: 50%
 					border: 1px solid $red_violet
-					flex-shrink: 0
+					flex-shrink: 0.5
 					text-align: center
+					position: relative
+
+					&:before
+						content: ""
+						position: relative
+						padding-top: 67%
+						display: block
 
 					img
 						display: inline-block
+						position: absolute
+						top: 0
+						bottom: 0
+						right: 0
+						left: 0
+						padding: 20px
+						box-sizing: border-box
+						margin: auto auto
 
-				span
+				div
 					flex-grow: 1
-					text-align: left
+					flex-shrink: 0.5
+					width: 50%
 					padding-left: 90px
+					padding-left: 8vw
 					font-size: 25px
-					text-transform: uppercase
-					color: $gray
+					display: flex
+					flex-direction: column
+					justify-content: flex-start
+					height: 250px
+
+					span
+						text-align: left
+						letter-spacing: 0.5px
+
+						&.bodyBlogList
+							color: $gray
+							font-size: 2.7vw
+							text-transform: uppercase
+							padding-bottom: 26px
+							padding-bottom: 2vw
+							padding-top: 1.5vw
+
+							&:first-letter
+								color: $gray
+
+						&.summaryBlogList
+							line-height: 40px
+							line-height: 4vw
+							text-decoration: none
+							font-style: italic
+							font-size: 20px
+							font-size: 2vw
+							padding: 0
+							display: inline-block
+
+/*
+In order to avoid fonts start increasing after 1200px 
+this is the max-font-size
+*/
+@media only screen and (min-width: 1200px)
+	.blogsContainer
+		ul
+			li
+				div
+					span
+						&.bodyBlogList
+							font-size: 32px
+							padding-bottom: 24px
+							padding-top: 18px
+
+						&.summaryBlogList
+							line-height: 48px
+							font-size: 24px

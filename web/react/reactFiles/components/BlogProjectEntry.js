@@ -17,7 +17,12 @@ class BlogProjectEntry extends Component{
 		return (
 			<li onClick={this._clickHandler}>
 				<figure className="identifierBlogList"><img src={this.props.img} alt=""></img></figure>
-				<span className="bodyBlogList">{this.props.text}</span>
+				<div>
+					<span className="bodyBlogList">{this.props.text}</span>
+					<span className="summaryBlogList">
+						Lorem eum minus quae necessitatibus exercitationem! Tempora perferendis adipisci sequi soluta quis? Perspiciatis modi fugiat culpa explicabo suscipit.
+					</span>
+				</div>
 			</li>
 		)
 	}
