@@ -83,6 +83,8 @@
 				max-width: initial
 				border: 0
 				width: 100%
+				position: relative
+				padding-bottom: 84px
 
 				figure
 					width: 400px
@@ -164,6 +166,33 @@
 							&.bodyBlogList
 								color: $violet
 								font-weight: bold
+				
+				&:after, &:before
+					content: ""
+					position: absolute
+					bottom: 0
+					width: 100%
+				
+				&:before
+					background-color: $gray
+					height: 1px
+					bottom: 22px
+
+				&:after
+					background-color: white
+					background-image: url("/static/img/secondary.png")
+					background-repeat: no-repeat
+					background-position: center center
+					background-size: contain
+					left: 50%
+					margin-left: -15px
+					width: 72px
+					height: 47px
+
+				&:last-child
+					&:before, &:after
+						display: none
+
 
 /*
 In order to avoid fonts start increasing after 1000px

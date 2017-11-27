@@ -1593,6 +1593,8 @@ footer .rights {
     max-width: initial;
     border: 0;
     width: 100%;
+    position: relative;
+    padding-bottom: 84px;
   }
   .blogsContainer ul li figure,
   .writingsContainer ul li figure {
@@ -1712,6 +1714,41 @@ footer .rights {
   .writingsContainer ul li:hover div span.bodyBlogList {
     color: #9e005d;
     font-weight: bold;
+  }
+  .blogsContainer ul li:after,
+  .writingsContainer ul li:after,
+  .blogsContainer ul li:before,
+  .writingsContainer ul li:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .blogsContainer ul li:before,
+  .writingsContainer ul li:before {
+    background-color: #878786;
+    height: 1px;
+    bottom: 22px;
+  }
+  .blogsContainer ul li:after,
+  .writingsContainer ul li:after {
+    background-color: #fff;
+    background-image: url("/static/img/secondary.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    left: 50%;
+    margin-left: -15px;
+    width: 72px;
+    height: 47px;
+  }
+  .blogsContainer ul li:last-child:before,
+  .writingsContainer ul li:last-child:before,
+  .blogsContainer ul li:last-child:after,
+  .writingsContainer ul li:last-child:after {
+    display: none;
   }
 }
 @media only screen and (min-width: 1000px) {
