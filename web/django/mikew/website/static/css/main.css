@@ -1577,10 +1577,15 @@ footer .rights {
   .blogsContainer ul li figure {
     width: 400px;
     height: 250px;
+    line-height: 250px;
     padding: 20px;
     border: 1px solid #a3195b;
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
+    text-align: center;
+  }
+  .blogsContainer ul li figure img {
+    display: inline-block;
   }
   .blogsContainer ul li span {
     -webkit-box-flex: 1;
