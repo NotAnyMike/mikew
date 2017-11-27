@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import WritingSingleItem from './WritingSingleItem';
+import BlogProjectEntry from './BlogProjectEntry';
 
 class WritingsDivContainer extends Component{
 	
 	render(){
 		var list = [];
 		if(Array.isArray(this.props.list)){
-			this.props.list.map(element => {list.push(
+			/*this.props.list.map(element => {list.push(
 				<WritingSingleItem 
 					key={element.pk} 
 					title={element.title} 
@@ -15,7 +16,15 @@ class WritingsDivContainer extends Component{
 					slug={element.slug}
 					goToEntryFn={this.props.goToEntryFn}
 				/>
-			)}, this);
+			)}, this);*/
+			this.props.list.map(element => {list.push(<BlogProjectEntry 
+					key={element.pk} 
+					img={element.img_header} 
+					text={element.title}
+					//summary={element.small_sentence} 
+					slug={element.slug}
+					goToEntryFn={this.props.goToEntryFn}
+				/>)}, this);
 		}
 		return(
 			<div className="mainContainer writingsContainer">

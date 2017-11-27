@@ -17,8 +17,10 @@ class WritingSingleItem extends Component {
 	render(){
 		return (
 			<li onClick={this._clickHandler}>
-				<span className="title">{this.props.title}</span>
-				<span className="body">{this.props.small_sentence}</span>
+				<div>
+					<span className="title">{this.props.title}</span>
+					<span className="body">{this.props.small_sentence}</span>
+				</div>
 			</li>
 		)
 	}

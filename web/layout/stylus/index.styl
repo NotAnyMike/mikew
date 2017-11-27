@@ -418,10 +418,10 @@ footer
 						right: 0
 						transform: scaleX(-1)
 
-		&.projects, &.blogs
+		&.projects, &.blogs, &.writings
 			.mainContainer
 				width: 100%
-				max-width: 1000px
+				max-width: $max_width
 				padding: 40px 0
 
 	header
@@ -627,7 +627,7 @@ footer
 			color: $gray
 			font-size: 12px
 
-@media only screen and (min-width: 1201px)
+@media only screen and (min-width: $max_width)
 	.indexContainer .mainInfo span p
 		line-height: 40px
 		font-size: 26px
