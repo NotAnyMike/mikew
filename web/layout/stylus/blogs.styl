@@ -86,7 +86,9 @@
 				figure
 					width: 400px
 					width: 50%
-					border: 1px solid $red_violet
+					border: 1px double $red_violet
+					border-width: 1px
+					transition: border-width $time
 					flex-shrink: 0.5
 					text-align: center
 					position: relative
@@ -147,6 +149,9 @@
 
 				&:hover
 					border: 0
+
+					figure
+						border-width:5px
 
 					div
 						span

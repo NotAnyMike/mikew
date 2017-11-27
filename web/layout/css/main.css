@@ -1587,7 +1587,13 @@ footer .rights {
   .blogsContainer ul li figure {
     width: 400px;
     width: 50%;
-    border: 1px solid #a3195b;
+    border: 1px double #a3195b;
+    border-width: 1px;
+    -webkit-transition: border-width 300ms;
+    -moz-transition: border-width 300ms;
+    -o-transition: border-width 300ms;
+    -ms-transition: border-width 300ms;
+    transition: border-width 300ms;
     -webkit-flex-shrink: 0.5;
     flex-shrink: 0.5;
     text-align: center;
@@ -1672,6 +1678,9 @@ footer .rights {
   }
   .blogsContainer ul li:hover {
     border: 0;
+  }
+  .blogsContainer ul li:hover figure {
+    border-width: 5px;
   }
   .blogsContainer ul li:hover div span:first-letter {
     color: unset;
