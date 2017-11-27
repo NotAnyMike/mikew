@@ -1186,7 +1186,7 @@ footer .rights {
   .bodyContainer.projects .mainContainer,
   .bodyContainer.blogs .mainContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 40px 0;
   }
   header .identifierContainer {
@@ -1623,8 +1623,8 @@ footer .rights {
     -webkit-flex-shrink: 0.5;
     flex-shrink: 0.5;
     width: 50%;
-    padding-left: 90px;
-    padding-left: 8vw;
+    padding-left: 40px;
+    padding-left: 4vw;
     font-size: 25px;
     display: -webkit-box;
     display: -moz-box;
@@ -1644,11 +1644,13 @@ footer .rights {
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
-    height: 250px;
   }
   .blogsContainer ul li div span {
     text-align: left;
     letter-spacing: 0.5px;
+  }
+  .blogsContainer ul li div span:first-letter {
+    color: unset;
   }
   .blogsContainer ul li div span.bodyBlogList {
     color: #878786;
@@ -1657,9 +1659,6 @@ footer .rights {
     padding-bottom: 26px;
     padding-bottom: 2vw;
     padding-top: 1.5vw;
-  }
-  .blogsContainer ul li div span.bodyBlogList:first-letter {
-    color: #878786;
   }
   .blogsContainer ul li div span.summaryBlogList {
     line-height: 40px;
@@ -1671,16 +1670,29 @@ footer .rights {
     padding: 0;
     display: inline-block;
   }
+  .blogsContainer ul li:hover {
+    border: 0;
+  }
+  .blogsContainer ul li:hover div span:first-letter {
+    color: unset;
+  }
+  .blogsContainer ul li:hover div span.bodyBlogList {
+    color: #9e005d;
+    font-weight: bold;
+  }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
+  .blogsContainer ul li div {
+    padding-left: 40px;
+  }
   .blogsContainer ul li div span.bodyBlogList {
-    font-size: 32px;
-    padding-bottom: 24px;
-    padding-top: 18px;
+    font-size: 27px;
+    padding-bottom: 20px;
+    padding-top: 15px;
   }
   .blogsContainer ul li div span.summaryBlogList {
-    line-height: 48px;
-    font-size: 24px;
+    line-height: 40px;
+    font-size: 20px;
   }
 }
 .writingsContainer ul {
