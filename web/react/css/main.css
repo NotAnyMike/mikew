@@ -1258,10 +1258,11 @@ footer .rights {
   }
   .indexContainer {
     width: 100%;
-    max-width: 1200px;
   }
   .indexContainer .mainInfo {
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .indexContainer .mainInfo figure {
     background-color: #878786;
@@ -1308,6 +1309,10 @@ footer .rights {
   }
   .indexContainer .mainInfo .separator {
     display: none;
+  }
+  .indexContainer .someWorks {
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .indexContainer .someWorks .titleContainer {
     margin: 0 auto;
@@ -1377,7 +1382,24 @@ footer .rights {
     position: absolute;
     min-height: 40%;
     position: absolute;
-    display: inline-block;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
     width: 100%;
     bottom: 0;
     z-index: 2;
@@ -1424,11 +1446,7 @@ footer .rights {
   .indexContainer .someWorks ul li:hover figure img {
     filter: grayscale(0%);
   }
-  footer {
-    width: 100%;
-/*max-width: $max_width*/
-  }
-  footer .separator {
+  .separator {
     display: inline-block;
     background: -webkit-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
     background: -moz-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
@@ -1437,6 +1455,13 @@ footer .rights {
     background: linear-gradient(90deg, #b84179, #8c245c, #551942, #192a35);
     width: 100%;
     height: 25px;
+  }
+  footer {
+    width: 100%;
+/*max-width: $max_width*/
+  }
+  footer .separator {
+    display: inline-block;
   }
   footer .moto {
     background-color: #fff;

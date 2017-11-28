@@ -12,6 +12,7 @@ class IndexDivContainer extends React.Component {
 		return (
 			<div className="mainContainer indexContainer">
 				<IndexMainInfo body={this.props.shortInfo}/>
+				<div className="separator"></div>
 				<SomeWorks list={this.props.someWorks} goToWorkFn={this.props.goToWorkFn}/>
 			</div>
 		)

@@ -482,10 +482,11 @@ footer
 				
 	.indexContainer
 		width: 100%
-		max-width: $max_max_width
 
 		.mainInfo
 			position: relative
+			max-width: $max_max_width
+			margin: 0 auto
 
 			figure
 				background-color: $gray
@@ -533,6 +534,9 @@ footer
 				display: none
 
 		.someWorks
+			max-width: $max_max_width
+			margin: 0 auto
+
 			.titleContainer
 				margin: 0 auto
 				width: 95%
@@ -580,7 +584,9 @@ footer
 						position: absolute
 						min-height: 40%
 						position: absolute
-						display: inline-block
+						display: flex
+						flex-direction: column
+						justify-content: center
 						width: 100%
 						bottom: 0
 						z-index: 2
@@ -625,15 +631,18 @@ footer
 							img
 								filter: grayscale(0%);
 
+	.separator
+		display: inline-block
+		background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+		width: 100%
+		height: 25px
+
 	footer
 		width: 100%
 		/*max-width: $max_width*/
 
 		.separator
 			display: inline-block
-			background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
-			width: 100%
-			height: 25px
 
 		.moto
 			background-color: white
