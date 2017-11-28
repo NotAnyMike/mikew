@@ -1722,13 +1722,19 @@ footer .rights {
     content: "";
     position: absolute;
     bottom: 0;
-    width: 100%;
   }
   .blogsContainer ul li:before,
   .writingsContainer ul li:before {
     background-color: #878786;
     height: 1px;
     bottom: 22px;
+    left: -40px;
+    right: -40px;
+    background: -webkit-radial-gradient(0% transparent, 10% transparent, #878786 11%);
+    background: -moz-radial-gradient(0% transparent, 10% transparent, #878786 11%);
+    background: -o-radial-gradient(0% transparent, 10% transparent, #878786 11%);
+    background: -ms-radial-gradient(0% transparent, 10% transparent, #878786 11%);
+    background: radial-gradient(0% transparent, 10% transparent, #878786 11%);
   }
   .blogsContainer ul li:after,
   .writingsContainer ul li:after {
@@ -1829,6 +1835,56 @@ footer .rights {
 }
 .writingsContainer ul li:last-child {
   margin-bottom: 10px;
+}
+@media only screen and (min-width: 601px) {
+  .writingsContainer {
+    position: relative;
+  }
+  .writingsContainer:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: -webkit-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: -moz-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: -o-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: -ms-linear-gradient(0deg, #b84179, #8c245c, #551942, #192a35);
+    background: linear-gradient(90deg, #b84179, #8c245c, #551942, #192a35);
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+  .writingsContainer ul {
+    position: relative;
+  }
+  .writingsContainer ul li {
+    z-index: 2;
+    background-color: transparent;
+  }
+  .writingsContainer ul li:nth-child(2n),
+  .writingsContainer ul li:nth-child(2n-1) {
+    background-color: transparent;
+  }
+  .writingsContainer ul li:nth-child(2n) span.title,
+  .writingsContainer ul li:nth-child(2n-1) span.title {
+    color: #a3195b;
+  }
+  .writingsContainer ul li:nth-child(2n) span.title:first-letter,
+  .writingsContainer ul li:nth-child(2n-1) span.title:first-letter {
+    color: #a3195b;
+  }
+  .writingsContainer ul li:nth-child(2n) span.body,
+  .writingsContainer ul li:nth-child(2n-1) span.body {
+    color: #878786;
+  }
+  .writingsContainer ul li:nth-child(2n):hover,
+  .writingsContainer ul li:nth-child(2n-1):hover {
+    background-color: transparent;
+  }
 }
 .blogContainer .identifierEntry,
 .projectContainer .identifierEntry,
