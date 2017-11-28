@@ -61,7 +61,8 @@
 					right: 0
 					z-index: 1
 					background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
-					opacity: .2
+					background: linear-gradient(90deg, black, #46002E)
+					opacity: .7
 
 
 				ul
@@ -75,24 +76,27 @@
 						padding: 14px
 						padding-bottom: 64px
 
+						figure
+							border-color: $violet
+							background-color: white
+
 						&:nth-child(2n), &:nth-child(2n-1)
 							background-color: transparent
 
 							span
-								&.title
-									color: $red_violet
-
-									&:first-letter
-										color: $red_violet
-
-								&.body, &.summaryBlogList
-									color: $gray
+								color: white
+								font-weight: normal
 
 							&:hover
 								background-color: transparent
 
+								span
+									font-weight: bold
+
 						&:before
-							background: linear-gradient(90deg, $gray 44.9%, transparent 45%, transparent 55%, $gray 55.1%)
+							background: white
+							background: linear-gradient(90deg, white 44.9%, transparent 45%, transparent 55%, white 55.1%)
 
 						&:after
 							background-color: transparent
+							background-image: url("/static/img/secondary-white.png")

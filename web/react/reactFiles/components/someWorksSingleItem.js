@@ -17,8 +17,11 @@ class SomeWorksSingleItem extends React.Component {
 	render() {
 		return (
 			<li onClick={this.goToWork}>
-				<span className="title">{this.props.title}</span>
-				<span className="body">Sentiment analysis for some politician</span>
+				<figure><img src="/static/img/agv.png" alt="" /></figure>
+				<div>
+					<span className="title">{this.props.title}</span>
+					<span className="body">Sentiment analysis for some politician</span>
+				</div>
 			</li>
 		)
 	};
