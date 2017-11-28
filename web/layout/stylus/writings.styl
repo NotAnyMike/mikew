@@ -44,40 +44,55 @@
 				margin-bottom: 10px
 
 @media only screen and (min-width: 601px)
-	.writingsContainer
-		position: relative
-			
-		&:after
-			content: ''
-			display: inline-block
-			position: absolute
-			top: 0
-			bottom: 0
-			left: 0
-			right: 0
-			z-index: 1
-			background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
-			opacity: .2
+	.bodyContainer
+		&.writings
+			.writingsContainer
+				position: relative
+				max-width: unset
+				width: 100%
+					
+				&:after
+					content: ''
+					display: inline-block
+					position: absolute
+					top: 0
+					bottom: 0
+					left: 0
+					right: 0
+					z-index: 1
+					background: linear-gradient(90deg, $violet1, $violet2, $violet3, $violet4)
+					opacity: .2
 
 
-		ul
-			position: relative
+				ul
+					position: relative
+					max-width: $max_width
+					margin: 0 auto
 
-			li
-				z-index: 2
-				background-color: transparent
-
-				&:nth-child(2n), &:nth-child(2n-1)
-					background-color: transparent
-
-					span
-						&.title
-							color: $red_violet
-
-							&:first-letter
-								color: $red_violet
-						&.body
-							color: $gray
-
-					&:hover
+					li
+						z-index: 2
 						background-color: transparent
+						padding: 14px
+						padding-bottom: 64px
+
+						&:nth-child(2n), &:nth-child(2n-1)
+							background-color: transparent
+
+							span
+								&.title
+									color: $red_violet
+
+									&:first-letter
+										color: $red_violet
+
+								&.body, &.summaryBlogList
+									color: $gray
+
+							&:hover
+								background-color: transparent
+
+						&:before
+							background: linear-gradient(90deg, $gray 44.9%, transparent 45%, transparent 55%, $gray 55.1%)
+
+						&:after
+							background-color: transparent

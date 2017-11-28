@@ -482,6 +482,7 @@ body {
   -webkit-flex-flow: column;
   -ms-flex-flow: column;
   flex-flow: column;
+  overflow: hidden;
   height: 100%;
 }
 .bodyContainer .mainContainer {
@@ -1595,6 +1596,9 @@ footer .rights {
     width: 100%;
     position: relative;
     padding-bottom: 84px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   .blogsContainer ul li figure,
   .writingsContainer ul li figure {
@@ -1612,6 +1616,9 @@ footer .rights {
     text-align: center;
     position: relative;
     display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   .blogsContainer ul li figure:before,
   .writingsContainer ul li figure:before {
@@ -1730,11 +1737,6 @@ footer .rights {
     bottom: 22px;
     left: -40px;
     right: -40px;
-    background: -webkit-radial-gradient(0% transparent, 10% transparent, #878786 11%);
-    background: -moz-radial-gradient(0% transparent, 10% transparent, #878786 11%);
-    background: -o-radial-gradient(0% transparent, 10% transparent, #878786 11%);
-    background: -ms-radial-gradient(0% transparent, 10% transparent, #878786 11%);
-    background: radial-gradient(0% transparent, 10% transparent, #878786 11%);
   }
   .blogsContainer ul li:after,
   .writingsContainer ul li:after {
@@ -1746,7 +1748,7 @@ footer .rights {
     -moz-background-size: contain;
     background-size: contain;
     left: 50%;
-    margin-left: -15px;
+    margin-left: -36px;
     width: 72px;
     height: 47px;
   }
@@ -1837,10 +1839,12 @@ footer .rights {
   margin-bottom: 10px;
 }
 @media only screen and (min-width: 601px) {
-  .writingsContainer {
+  .bodyContainer.writings .writingsContainer {
     position: relative;
+    max-width: unset;
+    width: 100%;
   }
-  .writingsContainer:after {
+  .bodyContainer.writings .writingsContainer:after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -1858,31 +1862,47 @@ footer .rights {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
     filter: alpha(opacity=20);
   }
-  .writingsContainer ul {
+  .bodyContainer.writings .writingsContainer ul {
     position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
   }
-  .writingsContainer ul li {
+  .bodyContainer.writings .writingsContainer ul li {
     z-index: 2;
     background-color: transparent;
+    padding: 14px;
+    padding-bottom: 64px;
   }
-  .writingsContainer ul li:nth-child(2n),
-  .writingsContainer ul li:nth-child(2n-1) {
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n),
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n-1) {
     background-color: transparent;
   }
-  .writingsContainer ul li:nth-child(2n) span.title,
-  .writingsContainer ul li:nth-child(2n-1) span.title {
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n) span.title,
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n-1) span.title {
     color: #a3195b;
   }
-  .writingsContainer ul li:nth-child(2n) span.title:first-letter,
-  .writingsContainer ul li:nth-child(2n-1) span.title:first-letter {
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n) span.title:first-letter,
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n-1) span.title:first-letter {
     color: #a3195b;
   }
-  .writingsContainer ul li:nth-child(2n) span.body,
-  .writingsContainer ul li:nth-child(2n-1) span.body {
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n) span.body,
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n-1) span.body,
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n) span.summaryBlogList,
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n-1) span.summaryBlogList {
     color: #878786;
   }
-  .writingsContainer ul li:nth-child(2n):hover,
-  .writingsContainer ul li:nth-child(2n-1):hover {
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n):hover,
+  .bodyContainer.writings .writingsContainer ul li:nth-child(2n-1):hover {
+    background-color: transparent;
+  }
+  .bodyContainer.writings .writingsContainer ul li:before {
+    background: -webkit-linear-gradient(0deg, #878786 44.9%, transparent 45%, transparent 55%, #878786 55.1%);
+    background: -moz-linear-gradient(0deg, #878786 44.9%, transparent 45%, transparent 55%, #878786 55.1%);
+    background: -o-linear-gradient(0deg, #878786 44.9%, transparent 45%, transparent 55%, #878786 55.1%);
+    background: -ms-linear-gradient(0deg, #878786 44.9%, transparent 45%, transparent 55%, #878786 55.1%);
+    background: linear-gradient(90deg, #878786 44.9%, transparent 45%, transparent 55%, #878786 55.1%);
+  }
+  .bodyContainer.writings .writingsContainer ul li:after {
     background-color: transparent;
   }
 }
