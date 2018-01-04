@@ -847,21 +847,27 @@ header ul li:hover {
   display: -ms-flexbox;
   display: box;
   display: flex;
-  -webkit-box-pack: left;
-  -moz-box-pack: left;
-  -o-box-pack: left;
-  -ms-flex-pack: left;
-  -webkit-justify-content: left;
-  justify-content: left;
   list-style: none;
   overflow-x: scroll;
-  padding: 0;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  padding: 0;
 }
 .indexContainer .someWorks ul .left,
 .indexContainer .someWorks ul .right {
@@ -891,91 +897,9 @@ header ul li:hover {
   content: '\e904';
 }
 .indexContainer .someWorks ul li {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -o-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   width: 140px;
-  margin: 10px 15px;
-  -webkit-flex-shrink: 0;
-  flex-shrink: 0;
-  -webkit-box-flex: 0;
-  -moz-box-flex: 0;
-  -o-box-flex: 0;
-  -ms-box-flex: 0;
-  box-flex: 0;
-  -webkit-flex-grow: 0;
-  flex-grow: 0;
   background: transparent;
   cursor: pointer;
-}
-.indexContainer .someWorks ul li figure {
-  display: none;
-}
-.indexContainer .someWorks ul li div {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -o-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-.indexContainer .someWorks ul li span {
-  text-align: center;
-  background-color: #fff;
-}
-.indexContainer .someWorks ul li .title {
-  border: 1px double #9e005d;
-  padding: 7px;
-  text-transform: uppercase;
-  font-size: 12px;
-  word-break: break-word;
-  -webkit-transition: 300ms border;
-  -moz-transition: 300ms border;
-  -o-transition: 300ms border;
-  -ms-transition: 300ms border;
-  transition: 300ms border;
-}
-.indexContainer .someWorks ul li .body {
-  padding: 15px 0;
-  font-size: 14px;
-}
-.indexContainer .someWorks ul li:last-child {
-  padding-right: 15px;
-}
-.indexContainer .someWorks ul li:hover .title {
-  border: 4px double #9e005d;
-}
-.indexContainer .someWorks ul {
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  -o-box-lines: single;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  -o-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  padding: 0;
-}
-.indexContainer .someWorks ul li {
   width: auto;
   max-width: 354px;
   min-width: 250px;
@@ -1015,6 +939,10 @@ header ul li:hover {
   -o-transition: filter 300ms;
   -ms-transition: filter 300ms;
   transition: filter 300ms;
+}
+.indexContainer .someWorks ul li span {
+  text-align: center;
+  background-color: #fff;
 }
 .indexContainer .someWorks ul li div {
   position: absolute;
@@ -1056,6 +984,14 @@ header ul li:hover {
   z-index: -1;
 }
 .indexContainer .someWorks ul li div .title {
+  padding: 7px;
+  text-transform: uppercase;
+  word-break: break-word;
+  -webkit-transition: 300ms border;
+  -moz-transition: 300ms border;
+  -o-transition: 300ms border;
+  -ms-transition: 300ms border;
+  transition: 300ms border;
   font-size: 16px;
   display: inline-block;
   width: 100%;
@@ -1067,6 +1003,8 @@ header ul li:hover {
   border: 0;
 }
 .indexContainer .someWorks ul li div .body {
+  padding: 15px 0;
+  font-size: 14px;
   display: none;
 }
 .indexContainer .someWorks ul li:after {

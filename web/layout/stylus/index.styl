@@ -240,11 +240,12 @@ header
 		ul
 			position: relative
 			display: flex
-			justify-content: left
 			list-style: none
 			overflow-x: scroll
-			padding: 0
 			align-items: center
+			flex-wrap: no-wrap
+			justify-content: flex-start
+			padding: 0
 
 			.left, .right
 				position: fixed
@@ -272,50 +273,9 @@ header
 					content: '\e904'
 
 			li
-				display: flex
-				flex-direction: column
 				width: 140px
-				margin: 10px 15px
-				flex-shrink: 0
-				flex-grow: 0
 				background: transparent
 				cursor: pointer
-
-				figure
-					display: none
-
-				div
-					display: flex
-					flex-direction: column
-
-				span
-					text-align: center
-					background-color: white
-
-				.title
-					border: 1px double $violet
-					padding: 7px
-					text-transform: uppercase
-					font-size: 12px
-					word-break: break-word
-					transition: $time border
-
-				.body
-					padding: 15px 0
-					font-size: 14px
-
-				&:last-child
-					padding-right: 15px
-
-				&:hover
-					.title
-						border: 4px double $violet
-		ul
-			flex-wrap: no-wrap
-			justify-content: flex-start
-			padding: 0
-
-			li
 				width: auto
 				max-width: 354px
 				min-width: 250px
@@ -345,6 +305,10 @@ header
 						height: 100%
 						transition: filter $time
 
+				span
+					text-align: center
+					background-color: white
+
 				div
 					position: absolute
 					min-height: 40%
@@ -368,6 +332,10 @@ header
 						z-index:-1
 
 					.title
+						padding: 7px
+						text-transform: uppercase
+						word-break: break-word
+						transition: $time border
 						font-size: 16px
 						display:inline-block
 						width: 100%
@@ -377,6 +345,8 @@ header
 						border: 0
 
 					.body
+						padding: 15px 0
+						font-size: 14px
 						display: none
 
 				&:after
