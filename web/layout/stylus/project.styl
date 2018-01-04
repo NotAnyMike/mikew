@@ -66,3 +66,28 @@
 
 				h2
 					color: $dark_ment
+
+@media only screen and (min-width: 800px)
+	.projectContainer
+		.techs
+			max-width: 1200px
+			margin: 30px auto
+			background-color: $very_very_soft_gray
+
+			.title
+				font-size: 20px
+				padding-left: 20px
+				margin: 0 100px
+
+			ul
+				flex-direction: row
+				margin: 0 100px
+
+			&:after
+				content: ''
+				
+@media only screen and (min-width: 1200px)
+	.projectContainer
+		.techs
+			.title
+				margin: 5px

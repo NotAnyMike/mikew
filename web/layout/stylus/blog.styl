@@ -81,3 +81,13 @@
 
 			img
 				border: 1px $soft_gray solid
+
+@media only screen and (min-width: 1200px)
+	.mainContainer
+		&.blogContainer, &.projectContainer, &.writingContainer
+			.content, .summary
+				max-width: 1200px
+				margin: 0 auto
+
+			.summary
+				display: block
