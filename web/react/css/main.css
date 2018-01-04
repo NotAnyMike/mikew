@@ -2177,6 +2177,14 @@ footer .rights {
     margin: 0px 15px 15px 0px;
     display: inline-block;
   }
+  .blogContainer .content ul li,
+  .projectContainer .content ul li,
+  .writingContainer .content ul li,
+  .blogContainer .summary ul li,
+  .projectContainer .summary ul li,
+  .writingContainer .summary ul li {
+    line-height: 35px;
+  }
   .blogContainer .content img,
   .projectContainer .content img,
   .writingContainer .content img,
@@ -2335,6 +2343,7 @@ footer .rights {
     font-size: 20px;
     padding-left: 20px;
     margin: 0 100px;
+    padding-top: 20px;
   }
   .projectContainer .techs ul {
     -webkit-box-orient: horizontal;
