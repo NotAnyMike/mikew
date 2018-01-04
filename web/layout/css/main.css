@@ -920,6 +920,20 @@ header ul li:hover {
 .indexContainer .someWorks ul li figure {
   display: none;
 }
+.indexContainer .someWorks ul li div {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 .indexContainer .someWorks ul li span {
   text-align: center;
   background-color: #fff;
