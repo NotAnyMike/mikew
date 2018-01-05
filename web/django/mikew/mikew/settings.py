@@ -24,7 +24,7 @@ PROJECT_DIR  = os.path.dirname(__file__)
 SECRET_KEY = 'm1v$m88tdm5s#5hq&opkowb*1h^0@%q80%ho$1nv#jcrh9ur!3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 LOCAL_DB = False
 
 ALLOWED_HOSTS = ['*']
@@ -118,7 +118,7 @@ if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/mikew-178315:us-central1:mikew-mysql',
-            'NAME': 'mikew',
+            'NAME': 'mikew2',
             'USER': 'mikew-mysql-user',
             'PASSWORD': 'z^cq?crVBdS8z6!D',
         }
