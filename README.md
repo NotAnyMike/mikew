@@ -6,7 +6,7 @@ This is the repo where I will be developing the new design of MikeW.io
 
 * Make sure you are logged in into the correct account with `gcloud config configurations activate <name>`, to know which configs are use `gcloud config configurations list`
 * To deploy to appengine use `gcloud app deploy` in the django folder.
-* To upload static content see **Using a google storage bucket** after running `manage.py collectstatic`.
+* This project ** DOES NOT ** need to upload static content, in case it does see **Using a google storage bucket** after running `manage.py collectstatic`. The static content is uploaded with the deployment.
 
 ## Using a google storage bucket
 
