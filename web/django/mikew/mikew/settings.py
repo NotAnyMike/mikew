@@ -25,6 +25,7 @@ SECRET_KEY = 'm1v$m88tdm5s#5hq&opkowb*1h^0@%q80%ho$1nv#jcrh9ur!3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOCAL_DB = False
 
 ALLOWED_HOSTS = ['*']
 #if DEBUG == True:
@@ -130,13 +131,13 @@ else:
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
 
-    if DEBUG == False:
+    if not LOCAL_DB or DEBUG == False:
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.mysql',
                 'HOST': '104.154.75.132',
                 'PORT': '3306',
-                'NAME': 'mikew',
+                'NAME': 'mikew2',
                 'USER': 'mikew-mysql-user',
                 'PASSWORD': 'z^cq?crVBdS8z6!D',
             }

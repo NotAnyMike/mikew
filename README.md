@@ -9,6 +9,7 @@ This is the repo where I will be developing the new design of MikeW.io
 ## About DB
 
 * The app is connecting directly to google cloud SQL (even in localhost if `DEBUG` is `False` due to some error with permisions with the cloud_sql_proxy file)
+* In order to run the django project using google's db (or the production db) change `LOCAL_DB` to `False` in `settings.py` and leave `DEBUG` alone, only change it to `True` when the project is about to be deployed.
 
 ### DB tested
 1. SQLite: Google App Engine does not grant access to the system files
